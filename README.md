@@ -16,7 +16,7 @@ Our project will be a two tier system. It will have normal users who will buy pr
 
 These will be the features that we will add:
 
-- User
+- Seller
     - Add products for sale
     - Modify products for sale
     - Track sales of products
@@ -28,9 +28,9 @@ These will be the features that we will add:
     - Respond to service requests
     - See requested product returns
 
-(10 features for user)
+(10 features for Seller)
 
-- Seller
+- User
     - Search product catalog
     - See product details
     - Add quantity of product to shopping cart
@@ -42,7 +42,7 @@ These will be the features that we will add:
     - Checkout order
     - Request product returns
 
-(10 features for seller)
+(10 features for User)
 
 ## Estimate of Hours
 We estimate that we will be working on this project for 60 hours, we have also assured ourselves of having the 10 required features per member.
