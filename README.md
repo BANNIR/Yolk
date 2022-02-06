@@ -1,19 +1,21 @@
 # Yolk
-Yolk is the name of our final project in eCommerce course winter 2022.
+Yolk is the name of our final project in eCommerce course Winter 2022.
 
 # Our Team
 Our team consists of two members, Shahe Bannis and Viktor Kostadinov.
 
-# ABout the Project
+# About the Project
 ## Our Goal
-Our goal with this project is to create a newegg inspired marketplace where we would have catalogs of items on the site and clients will be able to make accounts and buy products.
+Our goal with this project is to create a Newegg and eBay inspired marketplace where we would have catalogs of items on the site and clients will be able to make accounts and buy products.
 
 ## Clientele
-Our clientele will be consumers who want to purchase items online.
+Our clientele will be consumers who want to purchase items online. We also want to also target companies and sellers who want to sell their products online.
 
 ## Features
 Our project will be a two tier system. It will have normal users who will buy products and sellers who will sell them.
+
 These will be the features that we will add:
+
 - User
     - Add products for sale
     - Modify products for sale
@@ -25,6 +27,7 @@ These will be the features that we will add:
     - View client service requests
     - Respond to service requests
     - See requested product returns
+(10 features for user)
 - Seller
     - Search product catalog
     - See product details
@@ -36,6 +39,7 @@ These will be the features that we will add:
     - End service requests
     - Checkout order
     - Request product returns
+(10 features for seller)
 
 ## Estimate of Hours
-We estimate that we will be working on this project for 60 hours.
+We estimate that we will be working on this project for 60 hours, we have also assured ourselves of having the 10 required features per member.
