@@ -27,7 +27,9 @@ These will be the features that we will add:
     - View client service requests
     - Respond to service requests
     - See requested product returns
+
 (10 features for user)
+
 - Seller
     - Search product catalog
     - See product details
@@ -39,6 +41,7 @@ These will be the features that we will add:
     - End service requests
     - Checkout order
     - Request product returns
+
 (10 features for seller)
 
 ## Estimate of Hours
