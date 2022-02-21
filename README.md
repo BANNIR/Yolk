@@ -22,7 +22,6 @@ These will be the features that we will add:
     - Track sales of products
     - Create and modify store profile
     - Add [^1] advertisement to store profile (e.g. limited offers, popular offers, etc.)
-    - View product purchases
     - Mark purchased products as shipped and add tracking information
     - View client service requests
     - Respond to service requests
@@ -30,7 +29,7 @@ These will be the features that we will add:
 [^1]: and remove
 [^2]: How are these processed? Do you reply, approve, deny?
 
-(10[^3] features for Seller)
+(9[^3] features for Seller)
 [^3]: I count a few more interactions. We are trying to count the number of complete user interactions causing effects on the system or providing results to the user. E.g., to add and to delete a product are 2 interactions.
 
 - User
@@ -40,13 +39,14 @@ These will be the features that we will add:
     - Delete quantity of product to shopping cart[^4]
     - Modify quantity of product to shopping cart
     - Modify profile information
+    - View product purchases
     - Create service requests
     - End service requests
     - Checkout order
     - Request product returns
 [^4]: Add a product to or Delete a product from the shopping cart. The quantity is not important.
 
-(10 features for User)
+(11 features for User)
 
 ## Estimate of Hours
 We estimate that we will be working on this project for 60[^5] hours, we have also assured ourselves of having the 10 required features per member.
