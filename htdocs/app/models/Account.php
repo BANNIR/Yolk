@@ -1,7 +1,7 @@
 <?php
 namespace app\models;
 
-class User extends \app\core\Model{
+class Account extends \app\core\Model{
 
 	function __construct(){
 		parent::__construct();

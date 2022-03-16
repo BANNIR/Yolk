@@ -1,7 +1,7 @@
 <?php 
 namespace app\controllers;
 
-class User extends \app\core\Controller{
+class Account extends \app\core\Controller{
 	
 	//TODO: Model with get, insert, exists
 	//TODO: registration and login view
@@ -10,7 +10,7 @@ class User extends \app\core\Controller{
 		if(!isset($_POST['action'])){//there is no form being submitted
 			$this->view('User/login');
 		}else{//there is a form submitted
-			$user = new \app\models\User();
+			$user = new \app\models\Account();
 			$user = $user->get($_POST['username']);
 			if($user != false){
 				if(password_verify($_POST['password'],$user->password_hash)){
