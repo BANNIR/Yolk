@@ -8,7 +8,7 @@ class DBConnection{
 	private function __construct(){
 		if(self::$connection == null){
 			$host = 'localhost';
-			$DBname = 'assignment2';
+			$DBname = 'project';
 			$user = 'root';
 			$password = '';
 			self::$connection = new \PDO("mysql:host=$host;dbname=$DBname", $user, $password);

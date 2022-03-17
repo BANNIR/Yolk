@@ -8,7 +8,7 @@ class Account extends \app\core\Controller{
 
 	function index(){//login here
 		if(!isset($_POST['action'])){//there is no form being submitted
-			$this->view('User/login');
+			$this->view('Account/login');
 		}else{//there is a form submitted
 			$user = new \app\models\Account();
 			$user = $user->get($_POST['username']);
@@ -29,28 +29,38 @@ class Account extends \app\core\Controller{
 					}
 				}else{
 					//not the correct password
-					$this->view('User/login','Incorrect username/password combination.');
+					$this->view('Account/login','Incorrect username/password combination.');
 				}
 			}else{
-				$this->view('User/login','Incorrect username/password combination.');
+				$this->view('Account/login','Incorrect username/password combination.');
 			}
 		}
 	}
 
 	function register(){//register here
 		if(!isset($_POST['action'])){//there is no form being submitted
-			$this->view('User/register');
+			$this->view('Account/register');
 		}else{//there is a form submitted
-			$newUser = new \app\models\User();
+			$newUser = new \app\models\Account();
 			$newUser->username = $_POST['username'];
+			var_dump($_POST['choice']);
 
 			 if(!$newUser->exists() && $_POST['password'] == $_POST['password_confirm']){
 			 	$newUser->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+			 	if ($_POST['choice'] == "isSeller") {
+			 		$newUser->isSeller = 1;
+			 		$newUser->isConsumer = 0;
+			 	}else {
+			 		$newUser->isSeller = 0;
+			 		$newUser->isConsumer = 1;
+			 	}
+
+			 	$newUser->email = $_POST['email'];
 
 			 	$newUser->insert();
-			 	header('location:/User/index');
+			 	header('location:/Account/index');
 			 }else{
-				$this->view('User/register','The user account with that username already exists.');
+				$this->view('Account/register','The user account with that username already exists.');
 			 }
 		}
 	}
@@ -58,15 +68,15 @@ class Account extends \app\core\Controller{
 	#[\app\filters\Login]
 	function logout(){
 		session_destroy();//deletes the session ID and all data
-		header('location:/User/index');
+		header('location:/Account/index');
 	}
 
 	//toy application
 	//TODO: learn about access filtering
 	
-	#[\app\filters\Login]
-	function secureplace(){
-		echo 'You are logged in!<a href="/User/logout">Logout</a>';
-	}
+	//#[\app\filters\Login]
+	// function secureplace(){
+	// 	echo 'You are logged in!<a href="/User/logout">Logout</a>';
+	// }
 
 }

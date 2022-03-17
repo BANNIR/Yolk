@@ -12,18 +12,18 @@ class Account extends \app\core\Model{
 	}
 
 	function get($username){
-		$SQL = 'SELECT * FROM user WHERE username = :username';
+		$SQL = 'SELECT * FROM account WHERE username = :username';
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['username'=>$username]);
 		//TODO:add something here to make the return types cooler
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\User");
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Account");
 		return $STMT->fetch();
 	}
 
 	function insert(){
-		$SQL = 'INSERT INTO user(username,password_hash) VALUES(:username,:password_hash)';
+		$SQL = 'INSERT INTO account(username,password_hash,isSeller,isConsumer,email) VALUES(:username,:password_hash,:isSeller,:isConsumer,:email)';
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['username'=>$this->username,'password_hash'=>$this->password_hash]);
+		$STMT->execute(['username'=>$this->username,'password_hash'=>$this->password_hash,'isSeller'=>$this->isSeller,'isConsumer'=>$this->isConsumer,'email'=>$this->email]);
 	}
 
 

@@ -14,9 +14,10 @@
 	<form method='post' action=''>
 		<label class='form-label'>Username:<input type='text' name='username' class='form-control' /></label><br>
 		<label class='form-label'>Password:<input type='password' name='password' class='form-control' /></label><br>
+
 		<input type="submit" name='action' value='Login!' class='form-control' />
 	</form>
-	No account? <a href="/User/register">Register here.</a>
+	No account? <a href="/Account/register">Register here.</a>
 		<?php
 			$this->view('shared/navigation');
 		?>

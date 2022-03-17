@@ -13,12 +13,17 @@
 	<h1>Writers</h1>
 	<h2>Register to your user account</h2>
 	<form method='post' action=''>
+		<label class='form-label'>Email:<input type='text' name='email' class='form-control' /></label><br>
 		<label class='form-label'>Username:<input type='text' name='username' class='form-control' /></label><br>
 		<label class='form-label'>Password:<input type='password' name='password' class='form-control' /></label><br>
 		<label class='form-label'>Password confirmation:<input type='password' name='password_confirm' class='form-control' /></label><br>
+		<input type="radio" id="isSeller" name="choice" value="isSeller">
+        <label for="public">Seller</label><br>
+        <input type="radio" id="isConsumer" name="choice" value="isConsumer" checked>
+        <label for="private">Consumer</label><br>
 		<input type="submit" name='action' value='Register!' class='form-control' />
 	</form>
-	Already have an account? <a href="/User/login">Login here.</a>
+	Already have an account? <a href="/Account/login">Login here.</a>
 
 
 		<?php

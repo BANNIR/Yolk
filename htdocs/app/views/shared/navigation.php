@@ -12,9 +12,9 @@
 
 				if ($logged != true) {?>
 
-					<li><a href='/User/login'>Log in/Register</a></li>
+					<li><a href='/Account/login'>Log in/Register</a></li>
 
-				<?php } else {?> <li><a href='/User/logout'>Log out</a></li> <?php 
+				<?php } else {?> <li><a href='/Account/logout'>Log out</a></li> <?php 
 
 
 				$profile = new \app\models\Profile();
