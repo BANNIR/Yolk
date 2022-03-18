@@ -8,7 +8,7 @@ class Product extends \app\core\Model{
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['seller_id'=>$seller_id]);
 		//TODO:add something here to make the return types cooler
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Publication");
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Product");
 		return $STMT->fetch();
 	}
 
@@ -46,9 +46,9 @@ class Product extends \app\core\Model{
 	}
 
 	function update(){
-		$SQL = 'UPDATE publication SET publication_title = :publication_title, publication_text = :publication_text, timestamp = :timestamp, publication_status = :publication_status WHERE publication_id = :publication_id';
+		$SQL = 'UPDATE product SET product_name = :product_name, product_description = :product_description, product_price = :product_price, product_quantity = :product_quantity WHERE seller_id = :seller_id';
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['publication_title'=>$this->publication_title,'publication_text'=>$this->publication_text,'timestamp'=>$this->timestamp,'publication_status'=>$this->publication_status,'publication_id'=>$this->publication_id]);
+		$STMT->execute(['product_name'=>$this->product_name,'product_description'=>$this->product_description,'product_price'=>$this->product_price,'product_quantity'=>$this->product_quantity,'seller_id'=>$this->seller_id]);
 	}
 
 	function delete($publication_id){

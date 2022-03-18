@@ -42,4 +42,26 @@ class Product extends \app\core\Controller {
 			header('location:/Product/index');
 		}
 	}
+
+	public function update($product_id) {
+        $product = new \app\models\Product();
+		$product= $product->get($product_id);
+		if(!isset($_POST['update'])){
+			$this->view('Product/update', $product);
+		}else{
+			$seller_id = new \app\models\Seller();
+			$seller_id = $seller_id->getUserId($_SESSION['user_id']);
+			if($seller_id == $product->seller_id){
+				
+				// $product->seller_id=$seller_id
+				$product->product_name=$_POST['name'];
+				$product->product_price=$_POST['product_price'];
+				$product->product_quantity=$_POST['product_quantity'];
+				$product->product_description=$_POST['product_description'];
+				$product->update();
+			}
+
+			header('location:/Product/index/' . $_SESSION['user_id']);
+        }
+	}
 }

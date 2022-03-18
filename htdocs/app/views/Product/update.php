@@ -15,14 +15,11 @@
 	<h2>Update your comment</h2>
 	<p>Please enter the details required to update your comment.</p>
 	<form method='post' action=''>
-		<label class='form-label'>Title:<input type='text' name='publication_title' class='form-control' value='<?=$data->publication_title ?>' /></label><br>
-		<label for="publication_text">Text:</label>
-		<textarea id="publication_text" name="publication_text" rows="5" cols="150"><?=$data->publication_text ?></textarea>
-		<p>Visibility of your publication:</p>
-		<input type="radio" id="public" name="publication_status" value="public" checked>
-		<label for="public">Public</label><br>
-		<input type="radio" id="private" name="publication_status" value="private">
-		<label for="private">Private</label><br>
+		<label class='form-label'>Product Name:<input type='text' name='name' class='form-control' value="<?=$data->product_name ?>" /></label><br>
+		<label for="product_description">Description:</label>
+		<textarea id="product_description" name="product_description" rows="5" cols="150"><?=$data->product_description ?></textarea><br>
+		<label class='form-label'>Price:<input type='text' name='product_price' class='form-control'  value="<?=$data->product_price ?>"/></label><br>
+		<label class='form-label'>Quantity:<input type='number' name='product_quantity' class='form-control' value="<?=$data->product_quantity ?>"/></label><br>
 		<input type="submit" name='update' value='Update!' class='form-control' />
 	</form>
 		<?php
