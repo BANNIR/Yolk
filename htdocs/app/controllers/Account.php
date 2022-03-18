@@ -10,21 +10,33 @@ class Account extends \app\core\Controller{
 		if(!isset($_POST['action'])){//there is no form being submitted
 			$this->view('Account/login');
 		}else{//there is a form submitted
-			$user = new \app\models\Account();
-			$user = $user->get($_POST['username']);
-			if($user != false){
-				if(password_verify($_POST['password'],$user->password_hash)){
+			$account = new \app\models\Account();
+			$account = $account->get($_POST['username']);
+			if($account != false){
+				if(password_verify($_POST['password'],$account->password_hash)){
 					//yay! login - store that state in a session
-					$_SESSION['username'] = $user->username;
-					$_SESSION['user_id'] = $user->user_id;
-
+					$_SESSION['username'] = $account->username;
+					$_SESSION['user_id'] = $account->user_id;
+					/*
 					$profile = new \app\models\Profile();
-					$user_id = $user->user_id;
+					$user_id = $account->user_id;
 					$profile = $profile->getUserId($user_id);
-					if (!$profile) {
-						header("location:/Profile/create/$user_id");
+					*/
+					$seller = new \app\models\Seller();
+					$user_id = $account->user_id;
+					$seller = $seller->getUserId($user_id);
+					$consumer = new \app\models\Consumer();
+					$consumer = $consumer->getUserId($user_id);
+					// here we can check if a seller or consumer exists for given account and if not, redirect to seller/consumer page to put details
+					if (!$seller) {
+						header("location:/Seller/create/$user_id");
 					} else {
-						header("location:/Profile/index/$user_id");
+						header("location:/Seller/index/$user_id");
+					}
+					if (!$consumer) {		
+						header("location:/Consumer/create/$user_id");
+					} else {
+						header("location:/Consumer/index/$user_id");
 						//set the profile_id in a session variable
 					}
 				}else{
@@ -41,23 +53,23 @@ class Account extends \app\core\Controller{
 		if(!isset($_POST['action'])){//there is no form being submitted
 			$this->view('Account/register');
 		}else{//there is a form submitted
-			$newUser = new \app\models\Account();
-			$newUser->username = $_POST['username'];
+			$newAccount = new \app\models\Account();
+			$newAccount->username = $_POST['username'];
 			var_dump($_POST['choice']);
 
-			 if(!$newUser->exists() && $_POST['password'] == $_POST['password_confirm']){
-			 	$newUser->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+			 if(!$newAccount->exists() && $_POST['password'] == $_POST['password_confirm']){
+			 	$newAccount->password_hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 			 	if ($_POST['choice'] == "isSeller") {
-			 		$newUser->isSeller = 1;
-			 		$newUser->isConsumer = 0;
+			 		$newAccount->isSeller = 1;
+			 		$newAccount->isConsumer = 0;
 			 	}else {
-			 		$newUser->isSeller = 0;
-			 		$newUser->isConsumer = 1;
+			 		$newAccount->isSeller = 0;
+			 		$newAccount->isConsumer = 1;
 			 	}
 
-			 	$newUser->email = $_POST['email'];
+			 	$newAccount->email = $_POST['email'];
 
-			 	$newUser->insert();
+			 	$newAccount->insert();
 			 	header('location:/Account/index');
 			 }else{
 				$this->view('Account/register','The user account with that username already exists.');
