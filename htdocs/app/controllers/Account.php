@@ -20,7 +20,7 @@ class Account extends \app\core\Controller{
 					/*
 					$profile = new \app\models\Profile();
 					$user_id = $account->user_id;
-					$profile = $profile->getUserId($user_id);
+					f$proile = $profile->getUserId($user_id);
 					*/
 					$seller = new \app\models\Seller();
 					$user_id = $account->user_id;
@@ -28,17 +28,22 @@ class Account extends \app\core\Controller{
 					$consumer = new \app\models\Consumer();
 					$consumer = $consumer->getUserId($user_id);
 					// here we can check if a seller or consumer exists for given account and if not, redirect to seller/consumer page to put details
+					$isSeller = $account->isSeller($_SESSION['username']);
+					if ($isSeller) {
 					if (!$seller) {
 						header("location:/Seller/create/$user_id");
 					} else {
 						header("location:/Seller/index/$user_id");
 					}
+					} else {
+					
 					if (!$consumer) {		
 						header("location:/Consumer/create/$user_id");
 					} else {
 						header("location:/Consumer/index/$user_id");
 						//set the profile_id in a session variable
 					}
+				}
 				}else{
 					//not the correct password
 					$this->view('Account/login','Incorrect username/password combination.');
