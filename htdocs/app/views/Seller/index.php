@@ -18,8 +18,8 @@
 		<?php $link = "/Seller/update/" . $_SESSION['user_id'];
 				echo "<li><a href=" . $link . ">Update my profile</a></li>"; ?>
 		
-		<?php $link = "/Comment/mycomments/" . $_SESSION['user_id'];
-				echo "<li><a href=" . $link . ">My Comments</a></li>"; ?>
+		<?php $link = "/Product/index/" . $_SESSION['user_id'];
+				echo "<li><a href=" . $link . ">My Products</a></li>"; ?>
 	</form>
 		<?php
 			$this->view('shared/navigation');

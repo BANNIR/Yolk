@@ -23,30 +23,37 @@
 	<h2>Publications</h2>
 	<p>List of all the publications.</p>
 	<form method='post' action=''>
-	<input type="text" placeholder="Search..." style="margin-bottom: 20px" name="bar"> <input type="submit" name='search' value='Go!' style="background-color: rgb(256,256,256);" />
+	<!-- <input type="text" placeholder="Search..." style="margin-bottom: 20px" name="bar"> <input type="submit" name='search' value='Go!' style="background-color: rgb(256,256,256);" /> -->
+	<input type="submit" name='add' value='Add a product to sell!' style="background-color: rgb(256,256,256);" />
 	</form>
 		<table>
 		<?php
 			foreach ($data as $key => $value) {
-				if ($value->publication_status === "public" ) {
+				
 					echo "<tr>";
 					echo "<td>";
-	  				$profile = new \app\models\Profile();
-					$profile = $profile->get($value->profile_id);
+	  				$product = new \app\models\Product();
+					$product = $product->get($value->seller_id);
 					//$publication = new \app\models\Publication();
 					//$publication = $publication->get($data[$i]->publication_id);
 					//$link = '/Publication/page/' . $publication;
 					//echo "<a href='".$link."'>".$data[$i]->publication_title. "\t | \t" . "</a>";
-					$link = "/Publication/page/" . $value->publication_id;
-					echo "<a href='" . $link . "'>" . $value->publication_title . "</a>\t | \t";
+					$link = "/Product/page/" . $value->product_id;
+					$link2 = "/Product/update/" . $value->product_id;
+					echo "<a href='" . $link . "'>" . $value->product_name . "</a>\t | \t";
 					echo "From: ";
-					echo $profile->first_name . "\t";
-					echo $profile->middle_name . "\t";
-					echo $profile->last_name . "\t | \t";
-					echo $value->timestamp;
+					echo $product->product_name . "\t | \t";
+					echo "$" . $product->product_price . "\t | \t";
+					echo $product->product_quantity . " in stock\t | \t";
+					echo "<a href='" . $link2 . "'>" . "update" . "</a>\t | <br>";
+					echo $product->product_description . "\t";
+
+					// echo $profile->middle_name . "\t";
+					// echo $profile->last_name . "\t | \t";
+					// echo $value->timestamp;
 					echo "</tr>";
 					echo "</td>";
-				}
+				
 			}
 		?>
 		</table>

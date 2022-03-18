@@ -2,7 +2,7 @@
 	<div style = "position:absolute; right:1700px; bottom:850px; padding-right:20px; height: 20px; width: 200px;">
 		<ul>
 			<li><a href='/Main/index'>Home page</a></li>
-			<li><a href='/Publication/index'>Publications</a></li>
+			<li><a href='/Profile/index/1'>Publications</a></li>
 		<?php 
 				if ($_SESSION) {
 					$logged = true;
