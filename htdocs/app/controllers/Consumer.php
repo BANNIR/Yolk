@@ -16,9 +16,10 @@ class Consumer extends \app\core\Controller{
 			$this->view('Consumer/create',$myUser);
 		}else{	//process the data
 			$newConsumer = new \app\models\Consumer();
-			$newConsumer->user_id_consumer = $_SESSION['user_id_consumer'];
+			$newConsumer->user_id_consumer = $_SESSION['user_id'];
 			$newConsumer->first_name=$_POST['first_name'];
-			$newConsumer->middle_name=$_POST['middle_name'];
+			$newConsumer->last_name=$_POST['last_name'];
+			$newConsumer->address=$_POST['address'];
 			$id = $newConsumer->insert();
 
 			//set the session consumer id

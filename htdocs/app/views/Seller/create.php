@@ -13,9 +13,7 @@
 	<h2>Create a profile</h2>
 	<p>Please enter the details required to create your profile.</p>
 	<form method='post' action=''>
-		<label class='form-label'>First name:<input type='text' name='first_name' class='form-control' /></label><br>
-		<label class='form-label'>Last name:<input type='text' name='last_name' class='form-control' /></label><br>
-		<label class='form-label'>Address:<input type='text' name='address' class='form-control' /></label><br>
+		<label class='form-label'>Name:<input type='text' name='name' class='form-control' /></label><br>
 		<input type="submit" name='action' value='Create!' class='form-control' />
 	</form>
 		<?php

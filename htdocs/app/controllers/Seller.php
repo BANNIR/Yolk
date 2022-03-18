@@ -16,7 +16,7 @@ class Seller extends \app\core\Controller{
 			$this->view('Seller/create',$myUser);
 		}else{	//process the data
 			$newSeller = new \app\models\Seller();
-			$newSeller->user_id_seller = $_SESSION['user_id_seller'];
+			$newSeller->user_id_seller = $_SESSION['user_id'];
 			$newSeller->name=$_POST['name'];
 			$id = $newSeller->insert();
 

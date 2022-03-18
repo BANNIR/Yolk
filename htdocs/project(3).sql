@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2022 at 10:34 PM
+-- Generation Time: Mar 18, 2022 at 08:30 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -35,6 +35,14 @@ CREATE TABLE `account` (
   `isConsumer` tinyint(1) NOT NULL,
   `email` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`user_id`, `username`, `password_hash`, `isSeller`, `isConsumer`, `email`) VALUES
+(1, 'bag', '$2y$10$TPGyx4n6LNy9096dwk/fY.I1cZ5YZz0QZ1NQq2jxtviPnxBRIa2/e', 1, 0, 'sah@has.com'),
+(2, 'consumer', '$2y$10$G7NitKfHA2.AlZvPnRDkjem4bd9tvso6CMDkIn9rU6ykdVslsCMCi', 0, 1, 'consumer@baguette.com');
 
 -- --------------------------------------------------------
 
@@ -84,6 +92,13 @@ CREATE TABLE `consumer` (
   `last_name` varchar(50) NOT NULL,
   `address` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `consumer`
+--
+
+INSERT INTO `consumer` (`consumer_id`, `user_id_consumer`, `first_name`, `last_name`, `address`) VALUES
+(1, 2, 'Baguette', 'Jr.', '111 rue St-Croix');
 
 -- --------------------------------------------------------
 
@@ -147,9 +162,15 @@ CREATE TABLE `request` (
 CREATE TABLE `seller` (
   `seller_id` int(11) NOT NULL,
   `user_id_seller` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `product_id` int(11) NOT NULL
+  `name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `seller`
+--
+
+INSERT INTO `seller` (`seller_id`, `user_id_seller`, `name`) VALUES
+(1, 1, 'BAGUETTE INC.');
 
 --
 -- Indexes for dumped tables
@@ -223,8 +244,7 @@ ALTER TABLE `request`
 --
 ALTER TABLE `seller`
   ADD PRIMARY KEY (`seller_id`),
-  ADD KEY `user_id_fk` (`user_id_seller`),
-  ADD KEY `product_id_fk` (`product_id`);
+  ADD KEY `user_id_fk` (`user_id_seller`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -234,7 +254,7 @@ ALTER TABLE `seller`
 -- AUTO_INCREMENT for table `account`
 --
 ALTER TABLE `account`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `cart`
@@ -258,7 +278,7 @@ ALTER TABLE `checkout`
 -- AUTO_INCREMENT for table `consumer`
 --
 ALTER TABLE `consumer`
-  MODIFY `consumer_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `consumer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product`
@@ -288,7 +308,7 @@ ALTER TABLE `request`
 -- AUTO_INCREMENT for table `seller`
 --
 ALTER TABLE `seller`
-  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `seller_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -350,7 +370,6 @@ ALTER TABLE `request`
 -- Constraints for table `seller`
 --
 ALTER TABLE `seller`
-  ADD CONSTRAINT `product_id_fk` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
   ADD CONSTRAINT `user_id_fk` FOREIGN KEY (`user_id_seller`) REFERENCES `account` (`user_id`);
 COMMIT;
 
