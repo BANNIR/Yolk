@@ -13,10 +13,7 @@
 	<h2>Update a profile</h2>
 	<p>Please enter the details required to update your profile.</p>
 	<form method='post' action=''>
-		<label class='form-label'>First name:<input type='text' name='first_name' class='form-control' value='<?=$data->first_name ?>' /></label><br>
-		
-		<label class='form-label'>Last name:<input type='text' name='last_name' class='form-control' value='<?=$data->last_name ?>' /></label><br>
-		<label class='form-label'>Address:<input type='text' name='address' class='form-control' value='<?=$data->address ?>' /></label><br>
+		<label class='form-label'>Name:<input type='text' name='name' class='form-control' value='<?=$data->name ?>' /></label><br>
 		<input type="submit" name='action' value='Update!' class='form-control' />
 	</form>
 		<?php

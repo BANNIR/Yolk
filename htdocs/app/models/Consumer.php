@@ -33,7 +33,7 @@ class Consumer extends \app\core\Model{
 	}
 
 	function update(){
-		$SQL = 'UPDATE profile SET first_name = :first_name, last_name = :last_name, address = :address WHERE user_id_consumer = :user_id_consumer';
+		$SQL = 'UPDATE consumer SET first_name = :first_name, last_name = :last_name, address = :address WHERE user_id_consumer = :user_id_consumer';
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['first_name'=>$this->first_name,'last_name'=>$this->last_name,'address'=>$this->address,'user_id_consumer'=>$this->user_id_consumer]);
 	}

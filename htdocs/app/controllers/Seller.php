@@ -3,9 +3,9 @@ namespace app\controllers;
 
 #[\app\filters\Login]
 class Seller extends \app\core\Controller{
-    public function index($seller_id){
+    public function index($user_id_seller){
         $seller = new \app\models\Seller();
-		$seller= $seller->get($seller_id);
+		$seller= $seller->getUserId($user_id_seller);
         $this->view('Seller/index', $seller);
 
     }
@@ -29,18 +29,18 @@ class Seller extends \app\core\Controller{
 		}
 
     }
-    public function update($seller_id) {
+    public function update($user_id_seller) {
         //$this->view('seller/create');
 		$seller = new \app\models\Seller();
-		$seller= $seller->get($seller_id);//get the specific client
+		$seller= $seller->getUserId($user_id_seller);//get the specific client
 		//TODO: check if the client exists
 		if(!isset($_POST['action'])){
 			//show the view
 			$this->view('Seller/update', $seller);
 		}else{
-			$seller->first_name=$_POST['name'];
+			$seller->name=$_POST['name'];
 			$seller->update();
-			header('location:/Seller/index' . $seller->user_id_seller);
+			header('location:/Seller/index/' . $seller->user_id_seller);
 		}
     }
 }

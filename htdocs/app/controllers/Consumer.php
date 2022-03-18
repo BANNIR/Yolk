@@ -3,9 +3,9 @@ namespace app\controllers;
 
 #[\app\filters\Login]
 class Consumer extends \app\core\Controller{
-    public function index($consumer_id){
+    public function index($user_id_consumer){
         $consumer = new \app\models\Consumer();
-		$consumer= $consumer->get($consumer_id);
+		$consumer = $consumer->getUserId($user_id_consumer);
         $this->view('Consumer/index', $consumer);
 
     }
@@ -31,19 +31,20 @@ class Consumer extends \app\core\Controller{
 		}
 
     }
-    public function update($consumer_id) {
+    public function update($user_id_consumer) {
         //$this->view('consumer/create');
 		$consumer = new \app\models\Consumer();
-		$consumer= $consumer->get($consumer_id);//get the specific client
+		$consumer= $consumer->getUserId($user_id_consumer);//get the specific client
 		//TODO: check if the client exists
 		if(!isset($_POST['action'])){
 			//show the view
 			$this->view('Consumer/update', $consumer);
 		}else{
 			$consumer->first_name=$_POST['first_name'];
-			$consumer->middle_name=$_POST['middle_name'];
+			$consumer->last_name = $_POST['last_name'];
+			$consumer->address=$_POST['address'];
 			$consumer->update();
-			header('location:/Consumer/index' . $consumer->user_id_consumer);
+			header('location:/Consumer/index/' . $consumer->user_id_consumer);
 		}
     }
 }
