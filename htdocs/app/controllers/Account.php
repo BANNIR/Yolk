@@ -28,19 +28,22 @@ class Account extends \app\core\Controller{
 					$consumer = new \app\models\Consumer();
 					$consumer = $consumer->getUserId($user_id);
 					// here we can check if a seller or consumer exists for given account and if not, redirect to seller/consumer page to put details
-					$isSeller = $account->isSeller($_SESSION['username']);
-					if ($isSeller) {
-					if (!$seller) {
-						header("location:/Seller/create/$user_id");
-					} else {
-						header("location:/Seller/index/$user_id");
-					}
-					} else {
+					$isSeller = $account->isSeller;
+					$isConsumer = $account->isConsumer; 
 					
-					if (!$consumer) {		
+					if ($isConsumer) {
+					if (!$consumer) {
 						header("location:/Consumer/create/$user_id");
 					} else {
 						header("location:/Consumer/index/$user_id");
+					}
+					}  
+					else if($isSeller) {
+					
+					if (!$seller) {		
+						header("location:/Seller/create/$user_id");
+					} else {
+						header("location:/Seller/index/$user_id");
 						//set the profile_id in a session variable
 					}
 				}

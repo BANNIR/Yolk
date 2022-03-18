@@ -19,15 +19,6 @@ class Account extends \app\core\Model{
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Account");
 		return $STMT->fetch();
 	}
-	function isSeller ($username){
-		$SQL = 'SELECT isSeller FROM account WHERE username = :username';
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['username'=>$username]);
-		//TODO:add something here to make the return types cooler
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Account");
-		return $STMT->fetch();
-	}
-
 	function insert(){
 		$SQL = 'INSERT INTO account(username,password_hash,isSeller,isConsumer,email) VALUES(:username,:password_hash,:isSeller,:isConsumer,:email)';
 		$STMT = self::$_connection->prepare($SQL);
