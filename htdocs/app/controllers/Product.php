@@ -97,4 +97,8 @@ class Product extends \app\core\Controller {
         
 	}
 
+	function page($product_id) {
+		$this->view('Product/page', $product_id);
+	}
+
 }

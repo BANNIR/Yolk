@@ -13,16 +13,17 @@
 		<h1>Writers</h1>
 		<h2>Publication view</h2>
 		<?php
-
-		$seller = new \app\models\Seller();
-		$seller = $seller->get($data->seller_id); 
-		echo "Name:" . " ".$data->product_name. "<br>";
-		echo "By:" . " ".$seller->name. "<br>";
-		echo "Price:" . " ".$data->product_price. "$". "<br>";
-		echo "Quantity in stock:" . " ".$data->product_quantity. "<br>";
+			$product = new \app\models\Product();
+			$product = $product->get($data);
+			$seller = new \app\models\Seller();
+			$seller = $seller->get($product->seller_id); 
+			echo "Name:" . " ".$product->product_name. "<br>";
+			echo "By:" . " ".$seller->name. "<br>";
+			echo "Price:" . " ".$product->product_price. "$". "<br>";
+			echo "Quantity in stock:" . " ".$product->product_quantity. "<br>";
 		?>
 		<label for="product_description">Description:</label>
-		<textarea id="product_description" name="product_description" rows="5" cols="150" readonly><?=$data->product_description ?></textarea><br>
+		<textarea id="product_description" name="product_description" rows="5" cols="150" readonly><?=$product->product_description ?></textarea><br>
 
 	</form>
 	<?php
