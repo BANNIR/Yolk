@@ -2,9 +2,9 @@
 namespace app\controllers;
 
 class Product extends \app\core\Controller {
-	function index() {
+	function index($user_id) {
 		$product = new \app\models\Product();
-		$products = $product->getAll();
+		$products = $product->getAllBySeller($user_id);
 		
 		//search bar - improve to the way the teacher did it
 		// if(isset($_POST['search'])) {

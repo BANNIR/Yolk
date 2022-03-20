@@ -3,9 +3,9 @@ namespace app\controllers;
 
 class Catalog extends \app\core\Controller {
     function index() {
-		$catalog = new \app\models\Catalog();
-		$catalog = $catalog->getAll();
-		$this->view('Catalog/index',$catalog);
+		$product = new \app\models\Product();
+		$products = $product->getAll();
+		$this->view('Catalog/index',$products);
 		//search bar - improve to the way the teacher did it
 		// if(isset($_POST['search'])) {
 		// 	if (!$_POST['bar']) {

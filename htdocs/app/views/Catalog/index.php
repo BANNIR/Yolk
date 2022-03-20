@@ -36,15 +36,11 @@
 					$seller = new \app\models\Seller();
 					$seller = $seller->getName($value->seller_id);
 					$link = "/Product/page/" . $value->product_id;
-					$link2 = "/Product/update/" . $value->product_id;
-					$link3 = "/Product/delete/" . $value->product_id;
 					echo "<a href='" . $link . "'>" . $value->product_name . "</a>\t | \t";
 					echo "From: ";
 					echo $seller->name . "\t | \t";	// to be changed
 					echo "$" . $value->product_price . "\t | \t";
 					echo $value->product_quantity . " in stock\t | \t";
-					echo "<a href='" . $link2 . "'>" . "Update" . "</a>\t | ";
-					echo "<a href='" . $link3 . "'>" . "Delete" . "</a>\t | <br>";
 					echo $value->product_description . "\t";
 					
 					echo "</tr>";

@@ -17,16 +17,16 @@ class Product extends \app\core\Model{
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute();
 		//TODO:add something here to make the return types cooler
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Publication");
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Product");
 		return $STMT->fetchAll();
 	}
 	// this one is new
-	function getAllByProfile($profile_id){
-			$SQL = 'SELECT * FROM publication WHERE profile_id = :profile_id';
+	function getAllBySeller($seller_id){
+			$SQL = 'SELECT * FROM product WHERE seller_id = :seller_id';
 			$STMT = self::$_connection->prepare($SQL);
-			$STMT->execute(['profile_id'=>$profile_id]);
+			$STMT->execute(['seller_id'=>$seller_id]);
 			//TODO:add something here to make the return types cooler
-			$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Publication");
+			$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Product");
 			return $STMT->fetchAll();
 	}
 
@@ -35,7 +35,7 @@ class Product extends \app\core\Model{
 		$STMT = self::$_connection->prepare($SQL);
 		$STMT->execute(['publication_title'=>$publication_title]);
 		//TODO:add something here to make the return types cooler
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Publication");
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Product");
 		return $STMT->fetchAll();
 	}
 

@@ -21,27 +21,10 @@ class Catalog extends \app\core\Model{
 		return $STMT->fetchAll();
 	}
 
-
-	function getTitle($publication_title){
-		$SQL = 'SELECT * FROM publication WHERE publication_title = :publication_title';
+	function insert($catalogue_product_id){
+		$SQL = 'INSERT INTO catalogue(catalogue_product_id) VALUES(:catalogue_product_id)';
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['publication_title'=>$publication_title]);
-		//TODO:add something here to make the return types cooler
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Publication");
-		return $STMT->fetchAll();
-	}
-
-
-	function insert(){
-		$SQL = 'INSERT INTO catalogue VALUES(:product_name,:seller_id,:product_description,:product_price,:product_quantity)';
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['product_name'=>$this->product_name,'seller_id'=>$this->seller_id,'product_description'=>$this->product_description,'product_price'=>$this->product_price,'product_quantity'=>$this->product_quantity]);
-	}
-
-	function update(){
-		$SQL = 'UPDATE product SET product_name = :product_name, product_description = :product_description, product_price = :product_price, product_quantity = :product_quantity WHERE seller_id = :seller_id';
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['product_name'=>$this->product_name,'product_description'=>$this->product_description,'product_price'=>$this->product_price,'product_quantity'=>$this->product_quantity,'seller_id'=>$this->seller_id]);
+		$STMT->execute(['catalogue_product_id'=>$this->$catalogue_product_id]);
 	}
 
 	function delete($catalogue_product_id){
