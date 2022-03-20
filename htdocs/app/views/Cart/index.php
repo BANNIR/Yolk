@@ -41,7 +41,7 @@
 
 					$link = "/Product/page/" . $value->cart_product_id;
 					$link2 = "/Cart/delete/" . $value->cart_product_id . "/" . $value->cart_consumer_id;
-					$link3 = "Cart/update/" . $value->cart_id;
+					$link3 = "/Cart/update/" . $value->cart_id . "/". $value->cart_consumer_id;
 
 					echo "<a href='" . $link . "'>" . $product->product_name . "</a>\t | \t";
 					echo "Amount: ";
