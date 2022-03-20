@@ -4,15 +4,15 @@ namespace app\controllers;
 class Product extends \app\core\Controller {
 	function index($seller_id) {
 		$product = new \app\models\Product();
-		$seller_id = new \app\models\Seller();
-		$seller_id = $seller_id->getUserId($_SESSION['user_id']);
-		if($_SESSION['user_id'] != $product->seller_id){
+		$sellerId = new \app\models\Seller();
+		$sellerId = $sellerId->getUserId($_SESSION['user_id']);
+		if($sellerId->seller_id != $seller_id){
 	
 			header('location:/Main/index/');
 			
 		}
 		else {
-			header('location:/Product/index/' . $_SESSION['user_id']);
+			// header('location:/Product/index/' . $_SESSION['user_id']);
 	
 			$product = new \app\models\Product();
 			$products = $product->getAllBySeller($seller_id);
@@ -96,6 +96,5 @@ class Product extends \app\core\Controller {
 			header('location:/Product/index/' . $_SESSION['user_id']);
         
 	}
-	
 
 }
