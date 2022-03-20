@@ -15,6 +15,14 @@ class Seller extends \app\core\Model{
 		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Seller");
 		return $STMT->fetch();
 	}
+	function getName($seller_id){		
+		$SQL = 'SELECT name FROM seller WHERE seller_id = :seller_id';
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['seller_id'=>$seller_id]);
+		//TODO:add something here to make the return types cooler
+		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Seller");
+		return $STMT->fetch();
+	}
 
 	function getUserId($user_id_seller){
 		$SQL = 'SELECT * FROM seller WHERE user_id_seller = :user_id_seller';

@@ -51,7 +51,7 @@ class Product extends \app\core\Controller {
 		}else{
 			$seller_id = new \app\models\Seller();
 			$seller_id = $seller_id->getUserId($_SESSION['user_id']);
-			if($seller_id == $product->seller_id){
+			if($_SESSION['user_id'] == $product->seller_id){
 				
 				// $product->seller_id=$seller_id
 				$product->product_name=$_POST['name'];
@@ -64,4 +64,33 @@ class Product extends \app\core\Controller {
 			header('location:/Product/index/' . $_SESSION['user_id']);
         }
 	}
+	
+	public function page($product_id) {		// new
+        $product = new \app\models\Product();
+		$product= $product->get($product_id);
+		if(!isset($_POST['page'])){
+			$this->view('Product/page', $product);
+		}else{
+			$seller_id = new \app\models\Seller();
+			$seller_id = $seller_id->getUserId($_SESSION['user_id']);
+			if($_SESSION['user_id'] == $product->seller_id){
+				
+
+				$product->product_name=$_POST['name'];
+				$product->product_price=$_POST['product_price'];
+				$product->product_quantity=$_POST['product_quantity'];
+				$product->product_description=$_POST['product_description'];
+				$product->update();
+			}
+
+			header('location:/Product/index/' . $_SESSION['user_id']);
+        }
+	}
+	
+	public function delete($product_id) {
+		$product = new \app\models\Product();
+		$product->delete($product_id);
+		header('location:/Product/index/' . $_SESSION['user_id']);
+	}
+
 }

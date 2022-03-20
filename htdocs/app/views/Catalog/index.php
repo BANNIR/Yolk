@@ -13,18 +13,17 @@
 		background-color: rgb(256,256,256);
 	}
 </style>
-	<title>Publications</title>
+	<title>Shop</title>
 </head>
 <body>
 	<div class='container'>
 	
 
-	<h1>Writers</h1>
-	<h2>Publications</h2>
-	<p>List of all the publications.</p>
+	<h1>Yolk</h1>
+	<h2>Shop here!</h2>
+	<p>Do you want to buy something? You can see every offer here, or if you need something specific, you can search it!</p>
 	<form method='post' action=''>
-	<!-- <input type="text" placeholder="Search..." style="margin-bottom: 20px" name="bar"> <input type="submit" name='search' value='Go!' style="background-color: rgb(256,256,256);" /> -->
-	<input type="submit" name='add' value='Add a product to sell!' style="background-color: rgb(256,256,256);" />
+	<input type="text" placeholder="Search..." style="margin-bottom: 20px" name="bar"> <input type="submit" name='search' value='Search!' style="background-color: rgb(256,256,256);" /> 
 	</form>
 		<table>
 		<?php
@@ -36,10 +35,6 @@
 					$product = $product->get($value->seller_id);
 					$seller = new \app\models\Seller();
 					$seller = $seller->getName($value->seller_id);
-					//$publication = new \app\models\Publication();
-					//$publication = $publication->get($data[$i]->publication_id);
-					//$link = '/Publication/page/' . $publication;
-					//echo "<a href='".$link."'>".$data[$i]->publication_title. "\t | \t" . "</a>";
 					$link = "/Product/page/" . $value->product_id;
 					$link2 = "/Product/update/" . $value->product_id;
 					$link3 = "/Product/delete/" . $value->product_id;
@@ -51,10 +46,7 @@
 					echo "<a href='" . $link2 . "'>" . "Update" . "</a>\t | ";
 					echo "<a href='" . $link3 . "'>" . "Delete" . "</a>\t | <br>";
 					echo $value->product_description . "\t";
-
-					// echo $profile->middle_name . "\t";
-					// echo $profile->last_name . "\t | \t";
-					// echo $value->timestamp;
+					
 					echo "</tr>";
 					echo "</td>";
 				
