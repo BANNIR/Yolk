@@ -36,10 +36,7 @@
 					$product = $product->get($value->seller_id);
 					$seller = new \app\models\Seller();
 					$seller = $seller->getName($value->seller_id);
-					//$publication = new \app\models\Publication();
-					//$publication = $publication->get($data[$i]->publication_id);
-					//$link = '/Publication/page/' . $publication;
-					//echo "<a href='".$link."'>".$data[$i]->publication_title. "\t | \t" . "</a>";
+					
 					$link = "/Product/page/" . $value->product_id;
 					$link2 = "/Product/update/" . $value->product_id;
 					$link3 = "/Product/delete/" . $value->product_id;
