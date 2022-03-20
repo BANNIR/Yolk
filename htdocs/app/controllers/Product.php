@@ -4,9 +4,9 @@ namespace app\controllers;
 class Product extends \app\core\Controller {
 	function index($seller_id) {
 		$product = new \app\models\Product();
-		$sellerId = new \app\models\Seller();
-		$sellerId = $sellerId->getUserId($_SESSION['user_id']);
-		if($sellerId->seller_id != $seller_id){
+		$seller = new \app\models\Seller();
+		$seller = $seller->getUserId($_SESSION['user_id']);
+		if($seller->seller_id != $seller_id){
 	
 			header('location:/Main/index/');
 			
@@ -98,7 +98,31 @@ class Product extends \app\core\Controller {
 	}
 
 	function page($product_id) {
-		$this->view('Product/page', $product_id);
+		if(!isset($_POST['cart'])){
+			$this->view('Product/page', $product_id);
+		}else{
+
+			$product = new \app\models\Product();
+			$product = $product->get($product_id);
+
+			$consumer = new \app\models\Consumer();
+			$consumer = $consumer->getUserId($_SESSION['user_id']);
+			if($_POST['quantity'] > $product->product_quantity){
+				$this->view('Product/page', $product_id);
+				echo "Your ordering more than available!!!!!!";
+			} else{
+				$cart = new \app\models\Cart();
+
+				$cart->cart_product_id = $product_id;
+				$cart->cart_consumer_id = $consumer->consumer_id;
+				$cart->cart_product_quantity = $_POST['quantity'];
+				$cart->cart_order_price = $product->product_price;
+
+				$cart->insert();
+				$this->view('Product/page', $product_id);
+
+			}
+		}
 	}
 
 }

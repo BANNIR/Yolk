@@ -11,7 +11,7 @@
 
 
 
-	<h1>Writers</h1>
+	<h1>Yolk</h1>
 	<h2>Create a publication</h2>
 	<p>Please enter the details required to write a publication.</p>
 	<form method='post' action=''>
@@ -19,7 +19,7 @@
 		<label for="product_description">Description:</label>
 		<textarea id="product_description" name="product_description" rows="5" cols="150">Here, write anything you would like!</textarea><br>
 		<label class='form-label'>Price:<input type='text' name='product_price' class='form-control'  /></label><br>
-		<label class='form-label'>Quantity:<input type='number' name='product_quantity' class='form-control' value="0"/></label><br>
+		<label class='form-label'>Quantity:<input type='number' name='product_quantity' class='form-control' value="1" min="1" /></label><br>
 		<input type="submit" name='create' value='Create!' class='form-control' />
 	</form>
 		<?php

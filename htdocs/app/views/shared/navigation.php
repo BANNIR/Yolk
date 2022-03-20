@@ -27,6 +27,8 @@
 					else if ($consumer) {
 						$link = "/Consumer/index/" . $_SESSION['user_id'];
 						echo "<li><a href=" . $link . ">$consumer->first_name, $consumer->last_name - My profile</a></li>";
+						$link2 = "/Cart/index/" . $_SESSION['user_id'];
+						echo "<li><a href=" . $link2 . ">Cart</a></li>";
 					}
 					?> <li><a href='/Account/logout'>Log out</a></li> <?php 
 		 }?>

@@ -12,6 +12,8 @@
 
 		<h1>Writers</h1>
 		<h2>Publication view</h2>
+
+		<form method="post" action="">
 		<?php
 			$product = new \app\models\Product();
 			$product = $product->get($data);
@@ -22,8 +24,10 @@
 			echo "Price:" . " ".$product->product_price. "$". "<br>";
 			echo "Quantity in stock:" . " ".$product->product_quantity. "<br>";
 		?>
+
 		<label for="product_description">Description:</label>
 		<textarea id="product_description" name="product_description" rows="5" cols="150" readonly><?=$product->product_description ?></textarea><br>
+		<br><input type='number' name='quantity' class='form-control' value="1" min="1" /><input type="submit" name="cart" value="Add to Cart">
 
 	</form>
 	<?php
