@@ -2,9 +2,9 @@
 namespace app\controllers;
 
 class Product extends \app\core\Controller {
-	function index($user_id) {
+	function index($seller_id) {
 		$product = new \app\models\Product();
-		$products = $product->getAllBySeller($user_id);
+		$products = $product->getAllBySeller($seller_id);
 		
 		//search bar - improve to the way the teacher did it
 		// if(isset($_POST['search'])) {
@@ -39,7 +39,7 @@ class Product extends \app\core\Controller {
 			$newProduct->product_quantity=$_POST['product_quantity'];
 			$newProduct->product_description=$_POST['product_description'];
 			$newProduct->insert();
-			header('location:/Product/index');
+			header('location:/Product/index/' . $_SESSION['user_id']);
 		}
 	}
 
@@ -89,8 +89,10 @@ class Product extends \app\core\Controller {
 	
 	public function delete($product_id) {
 		$product = new \app\models\Product();
+		if($_SESSION){
 		$product->delete($product_id);
 		header('location:/Product/index/' . $_SESSION['user_id']);
+		}
 	}
 
 }
