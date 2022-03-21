@@ -12,7 +12,7 @@ class Cart extends \app\core\Controller {
 			$cart = $cart->getAll($consumer->consumer_id);
 			$this->view('Cart/index', $cart);
 		} else {
-			header("location:Checkout/index");
+			header("location:/Checkout/index");
 		}
 	}
 
