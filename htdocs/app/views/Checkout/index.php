@@ -13,15 +13,15 @@
 		background-color: rgb(256,256,256);
 	}
 </style>
-	<title>Publications</title>
+	<title>Checkout</title>
 </head>
 <body>
 	<div class='container'>
 	
 
 	<h1>Yolk</h1>
-	<h2>Cart</h2>
-	<p>List of items in cart.</p>
+	<h2>Checkout</h2>
+	<p>Confirm your purchase!</p>
 	
 		<table>
 		<?php
@@ -40,15 +40,10 @@
 					$product = $product->get($value->cart_product_id);
 
 					$link = "/Product/page/" . $value->cart_product_id;
-					$link2 = "/Cart/delete/" . $value->cart_product_id . "/" . $value->cart_consumer_id;
-					$link3 = "/Cart/update/" . $value->cart_id . "/". $value->cart_consumer_id;
-
 					echo "<a href='" . $link . "'>" . $product->product_name . "</a>\t | \t";
 					echo "Amount: ";
 					echo $value->cart_product_quantity . "\t | \t";	// to be changed
 					echo "Price: $" . $value->cart_order_price . "\t | \t";
-					echo "<a href='" . $link3 . "'> Update </a>\t | \t";
-					echo "<a href='" . $link2 . "'> Remove </a>\t";
 					// echo $value->product_quantity . " in stock\t | \t";
 					// echo "<a href='" . $link2 . "'>" . "Update" . "</a>\t | ";
 					// echo "<a href='" . $link3 . "'>" . "Delete" . "</a>\t | <br>";
@@ -56,18 +51,37 @@
 					echo "</tr>";
 					echo "</td>";
 			}
-			echo "<tr><td>Total: $" . $total[0] . "</tr></td>";
-			echo "</table>";
-			echo '<form method="post" action=""> <br><input type="submit" name="checkout" value="Checkout!"></form>';
+			
 		}
 			
 		?>
-		<!--</table>-->
+		</table>
 
 		<form method='post' action=''>
 		<!-- <input type="text" placeholder="Search..." style="margin-bottom: 20px" name="bar"> <input type="submit" name='search' value='Go!' style="background-color: rgb(256,256,256);" /> -->
-		
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <label for="phone">Phone Number:</label><br>
+        <input type="text" id="phone" name="phone"><br>
+        <label for="cardnum">Card Number:</label><br>
+        <input type="text" id="cardnum" name="cardnum"><br>
+        <label for="carddate">Card Expiration Date:</label><br>
+        <input type="text" id="carddate" name="carddate"><br>
+        <label for="cardcvv">Card CVV:</label><br>
+        <input type="text" id="cardcvv" name="cardcvv"><br>
+        <p>Choose the speed of delivery:</p>
+        <input type="radio" id="standard" name="delivery" value="Standard">
+        <label for="standard">Standard (+0.00$)</label><br>
+        <input type="radio" id="fast" name="delivery" value="Fast">
+        <label for="css">Fast (+10.00$)</label><br>
+        <?php echo "<tr><td>Total Price: " . $total[0] . "$". "</tr></td>"; ?>
+		<br><input type="submit" name="purchase" value="Buy now!">
 		</form>
+        
 
 		<?php
 			$this->view('shared/navigation');
