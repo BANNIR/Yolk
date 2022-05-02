@@ -13,20 +13,20 @@
 		background-color: rgb(256,256,256);
 	}
 </style>
-	<title>Publications</title>
+	<title><?= _("Cart")?></title>
 </head>
 <body>
 	<div class='container'>
 	
 
 	<h1>Yolk</h1>
-	<h2>Cart</h2>
-	<p>List of items in cart.</p>
+	<h2><?= _('Cart')?></h2>
+	<p><?= _('List of items in cart.') ?></p>
 	
 		<table>
 		<?php
 		if (!$data) {
-			echo "<p> No items in cart! </p>";
+			echo "<p>" . '_("No items in cart!")' . "</p>";
 		} else {
 			foreach ($data as $key => $value) {
 
@@ -42,13 +42,14 @@
 					$link = "/Product/page/" . $value->cart_product_id;
 					$link2 = "/Cart/delete/" . $value->cart_product_id . "/" . $value->cart_consumer_id;
 					$link3 = "/Cart/update/" . $value->cart_id . "/". $value->cart_consumer_id;
-
+					echo "<img src='/pictures/" . $product->picture . "' height='200' width='200'> ";
 					echo "<a href='" . $link . "'>" . $product->product_name . "</a>\t | \t";
-					echo "Amount: ";
+					echo _("Amount:");
 					echo $value->cart_product_quantity . "\t | \t";	// to be changed
-					echo "Price: $" . $value->cart_order_price . "\t | \t";
-					echo "<a href='" . $link3 . "'> Update </a>\t | \t";
-					echo "<a href='" . $link2 . "'> Remove </a>\t";
+					echo _("Price per Item: $") . $value->cart_order_price . "\t | \t";
+					echo _("Total Item Price: $") . $value->cart_total_price_item . "\t | \t";
+					echo "<a href='" . $link3 . "'>" ._('Update') . "</a>\t | \t";
+					echo "<a href='" . $link2 . "'>" ._('Remove') . "</a>\t";
 					// echo $value->product_quantity . " in stock\t | \t";
 					// echo "<a href='" . $link2 . "'>" . "Update" . "</a>\t | ";
 					// echo "<a href='" . $link3 . "'>" . "Delete" . "</a>\t | <br>";
@@ -56,7 +57,7 @@
 					echo "</tr>";
 					echo "</td>";
 			}
-			echo "<tr><td>Total: $" . $total[0] . "</tr></td>";
+			echo "<tr><td>" . _("Total Order Price: $") . $total[0] . "</tr></td>";
 			echo "</table>";
 			echo '<form method="post" action=""> <br><input type="submit" name="checkout" value="Checkout!"></form>';
 		}

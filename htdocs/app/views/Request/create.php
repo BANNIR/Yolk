@@ -8,14 +8,20 @@
 </head>
 <body>
 	<div class='container'>
-		<h1>Writers</h1>
-		<h2>Comment</h2>
+		<h1>Yolk</h1>
+		<h2><?= _("Customer Service")?></h2>
+		<h3>
+			<?php 
+			$product = new \app\models\Product();
+			$product = $product->get($data);
+			echo _('Product: ') . $product->product_name;
+			?>
+		</h3>
 		<form method='post' action=''>
-		<label for="comment_text">Make a comment: </label>
-		<textarea id="comment_text" name="comment_text" rows="5" cols="150">Here, comment anything you would like!</textarea>
-		<input type="submit" name='comment_create' value='Post!' class='form-control' />
+		<label for="request_description"><?=_('Description of problem:')?> </label>
+		<textarea id="request_description" name="request_description" rows="5" cols="150" placeholder='<?=_('Please describe the problem you are having.')?>' ></textarea>
+		<input type="submit" name='request_create' value='<?=_('Make a request')?>' class='form-control' />
 	</form>
 	</div>
 </body>
 </html>
-

@@ -1,6 +1,5 @@
 <?php 
 namespace app\controllers;
-
 class Account extends \app\core\Controller{
 	
 	//TODO: Model with get, insert, exists
@@ -22,31 +21,38 @@ class Account extends \app\core\Controller{
 					$user_id = $account->user_id;
 					f$proile = $profile->getUserId($user_id);
 					*/
-					$seller = new \app\models\Seller();
-					$user_id = $account->user_id;
-					$seller = $seller->getUserId($user_id);
-					$consumer = new \app\models\Consumer();
-					$consumer = $consumer->getUserId($user_id);
+
+					if ($account->secret_key != null) 
+						header('location:/Account/validate2fa');
+					
+					else
+						header('location:/Account/setup2fa');
+
+					// $seller = new \app\models\Seller();
+					// $user_id = $account->user_id;
+					// $seller = $seller->getUserId($user_id);
+					// $consumer = new \app\models\Consumer();
+					// $consumer = $consumer->getUserId($user_id);
 					// here we can check if a seller or consumer exists for given account and if not, redirect to seller/consumer page to put details
-					$isSeller = $account->isSeller;
-					$isConsumer = $account->isConsumer; 
+					// $isSeller = $account->isSeller;
+					// $isConsumer = $account->isConsumer; 
 					
-					if ($isConsumer) {
-					if (!$consumer) {
-						header("location:/Consumer/create/$user_id");
-					} else {
-						header("location:/Consumer/index/$user_id");
-					}
-					}  
-					else if($isSeller) {
+					// if ($isConsumer) {
+					// 	if (!$consumer) {
+					// 		header("location:/Consumer/create/$user_id");
+					// 	} else {
+					// 		header("location:/Consumer/index/$user_id");
+					// 	}
+					// }  
+					// else if($isSeller) {
 					
-					if (!$seller) {		
-						header("location:/Seller/create/$user_id");
-					} else {
-						header("location:/Seller/index/$user_id");
-						//set the profile_id in a session variable
-					}
-				}
+					// if (!$seller) {		
+					// 	header("location:/Seller/create/$user_id");
+					// } else {
+					// 	header("location:/Seller/index/$user_id");
+					// 	//set the profile_id in a session variable
+					// }
+				// }
 				}else{
 					//not the correct password
 					$this->view('Account/login','Incorrect username/password combination.');
@@ -91,12 +97,132 @@ class Account extends \app\core\Controller{
 		header('location:/Account/index');
 	}
 
-	//toy application
-	//TODO: learn about access filtering
-	
-	//#[\app\filters\Login]
-	// function secureplace(){
-	// 	echo 'You are logged in!<a href="/User/logout">Logout</a>';
-	// }
+	// Use: /Default/makeQRCode?data=protocol://address
+	public function makeQRCode(){
+		$data = $_GET['data'];
+		\QRcode::png($data);
+	}
+
+	public function setup2fa(){
+		if (isset($_POST['action'])) {
+			$currentcode = $_POST['currentCode'];
+			if (\App\core\TokenAuth6238::verify($_SESSION['secretkey'], $currentcode)) {
+				//the user has verified their proper 2-factor authentication setup
+				$account = new \app\models\Account();
+				$account = $account->get($_SESSION['username']);
+				$account->secret_key = $_SESSION['secretkey'];
+				$account->update2fa();
+
+
+				// here we can check if a seller or consumer exists for given account and if not, redirect to seller/consumer page to put details
+				$seller = new \app\models\Seller();
+				$user_id = $account->user_id;
+				$seller = $seller->getUserId($user_id);
+				$consumer = new \app\models\Consumer();
+				$consumer = $consumer->getUserId($user_id);
+				$isSeller = $account->isSeller;
+				$isConsumer = $account->isConsumer; 
+				
+				if ($isConsumer) {
+					if (!$consumer) {
+						header("location:/Consumer/create/$user_id");
+					} else {
+						header("location:/Consumer/index/$user_id");
+					}
+				}  
+				else if($isSeller) {
+				
+				if (!$seller) {		
+					header("location:/Seller/create/$user_id");
+				} else {
+						header("location:/Seller/index/$user_id");
+						//set the profile_id in a session variable
+					}
+				} 
+			}
+			else {
+				header('location:/Account/setup2fa?error=tokennot verified!');//reload
+			}
+		} elseif (isset($_POST['cancel'])) {
+			$_SESSION['secretkey'] = "empty";
+			// here we can check if a seller or consumer exists for given account and if not, redirect to seller/consumer page to put details
+			$account = new \app\models\Account();
+			$account = $account->get($_SESSION['username']);
+			$seller = new \app\models\Seller();
+			$user_id = $account->user_id;
+			$seller = $seller->getUserId($user_id);
+			$consumer = new \app\models\Consumer();
+			$consumer = $consumer->getUserId($user_id);
+			$isSeller = $account->isSeller;
+			$isConsumer = $account->isConsumer; 
+			
+			if ($isConsumer) {
+				if (!$consumer) {
+					header("location:/Consumer/create/$user_id");
+				} else {
+					header("location:/Main/index/");
+				}
+			}  
+			else if($isSeller) {
+			
+			if (!$seller) {		
+				header("location:/Seller/create/$user_id");
+			} else {
+					header("location:/Main/index/");
+					//set the profile_id in a session variable
+				}
+			}
+		}
+		else {
+			$secretkey = \app\core\TokenAuth6238::generateRandomClue();
+			$_SESSION['secretkey'] = $secretkey;
+			$url = \App\core\TokenAuth6238::getLocalCodeUrl($_SESSION['username'], 'Awesome.com', $secretkey,'My Application');
+			$this->view('Account/twofasetup', $url);
+		}
+	}
+
+	public function validate2FA() {
+		if (isset($_POST['action'])) {
+			$code = $_POST['code'];
+			$account = new \app\models\Account();
+			$account = $account->get($_SESSION['username']);
+			$secret = $account->secret_key;
+			echo $secret;
+			if (\App\core\TokenAuth6238::verify($secret, $code)) {
+				$_SESSION['secretkey'] = $secret;
+
+
+				// here we can check if a seller or consumer exists for given account and if not, redirect to seller/consumer page to put details
+				$seller = new \app\models\Seller();
+				$user_id = $account->user_id;
+				$seller = $seller->getUserId($user_id);
+				$consumer = new \app\models\Consumer();
+				$consumer = $consumer->getUserId($user_id);
+				$isSeller = $account->isSeller;
+				$isConsumer = $account->isConsumer; 
+				
+				if ($isConsumer) {
+					if (!$consumer) {
+						header("location:/Consumer/create/$user_id");
+					} else {
+						header("location:/Consumer/index/$user_id");
+					}
+				}  
+				else if($isSeller) {
+				
+					if (!$seller) {		
+						header("location:/Seller/create/$user_id");
+					} else {
+						header("location:/Seller/index/$user_id");
+						//set the profile_id in a session variable
+					}
+				}
+			}
+			else
+				$this->view('Account/validate2fa','Invalid code. Please re-enter.');
+		}
+		else
+			$this->view('Account/validate2fa');	
+	}
 
 }

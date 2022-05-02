@@ -31,15 +31,16 @@ class Cart extends \app\core\Controller {
 				
 				if($_POST['quantity'] > $product->product_quantity){
 					$this->view('Cart/update', $cart_id, $consumer_id);
-					echo "Your ordering more than available!!!!!!";
+					echo "The quantity you want to order is more than the quantity in stock!";
 				} else{
 					$cart->cart_product_quantity=$_POST['quantity'];
 					$cart->cart_id = $cart_id;
 					$cart->update();
 				}
-			}
+			} else {
 
-			header('location:/Cart/index/' . $_SESSION['user_id']);
+				header('location:/Cart/index/' . $_SESSION['user_id']);
+			}
         }
 	}
 

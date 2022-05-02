@@ -9,14 +9,14 @@
 <body>
 	<div class='container'>
 
-	<h1>Writers</h1>
-	<h2>Create a profile</h2>
-	<p>Please enter the details required to create your profile.</p>
+	<h1>Yolk</h1>
+	<h2><?= _("Create a profile")?></h2>
+	<p><?= _("Please fill the required fields to create your profile.")?></p>
 	<form method='post' action=''>
-		<label class='form-label'>First name:<input type='text' name='first_name' class='form-control' /></label><br>
-		<label class='form-label'>Last name:<input type='text' name='last_name' class='form-control' /></label><br>
-		<label class='form-label'>Address:<input type='text' name='address' class='form-control' /></label><br>
-		<input type="submit" name='action' value='Create!' class='form-control' />
+		<label class='form-label'><?= _('First name')?> : <input type='text' name='first_name' class='form-control' /></label><br>
+		<label class='form-label'><?= _('Last name')?> : <input type='text' name='last_name' class='form-control' /></label><br>
+		<label class='form-label'><?= _('Address')?> : <input type='text' name='address' class='form-control' /></label><br>
+		<input type="submit" name='action' value='<?= _('Create!') ?>' class='form-control' />
 	</form>
 		<?php
 			$this->view('shared/navigation');

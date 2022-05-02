@@ -13,20 +13,20 @@
 		background-color: rgb(256,256,256);
 	}
 </style>
-	<title>Checkout</title>
+	<title><?= _("Checkout")?></title>
 </head>
 <body>
 	<div class='container'>
 	
 
 	<h1>Yolk</h1>
-	<h2>Checkout</h2>
-	<p>Confirm your purchase!</p>
+	<h2><?= _("Checkout")?></h2>
+	<p><?= _("Confirm your purchase!")?></p>
 	
 		<table>
 		<?php
 		if (!$data) {
-			echo "<p> No items in cart! </p>";
+			echo "<p>" . _("No items in cart!") . "</p>";
 		} else {
 			foreach ($data as $key => $value) {
 
@@ -40,10 +40,11 @@
 					$product = $product->get($value->cart_product_id);
 
 					$link = "/Product/page/" . $value->cart_product_id;
+					echo "<img src='/pictures/" . $product->picture . "' height='200' width='200'> ";
 					echo "<a href='" . $link . "'>" . $product->product_name . "</a>\t | \t";
-					echo "Amount: ";
+					echo _('Amount: ');
 					echo $value->cart_product_quantity . "\t | \t";	// to be changed
-					echo "Price: $" . $value->cart_order_price . "\t | \t";
+					echo _('Price: $') . $value->cart_order_price . "\t | \t";
 					// echo $value->product_quantity . " in stock\t | \t";
 					// echo "<a href='" . $link2 . "'>" . "Update" . "</a>\t | ";
 					// echo "<a href='" . $link3 . "'>" . "Delete" . "</a>\t | <br>";
@@ -59,30 +60,39 @@
 
 		<form method='post' action=''>
 		<!-- <input type="text" placeholder="Search..." style="margin-bottom: 20px" name="bar"> <input type="submit" name='search' value='Go!' style="background-color: rgb(256,256,256);" /> -->
-        <label for="fname">First name:</label><br>
+		<label for="fname"><?= _('First name') ?>:</label><br>
         <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last name:</label><br>
+		<label for="lname"><?= _('Last name') ?>:</label><br>
         <input type="text" id="lname" name="lname"><br>
-        <label for="address">Address:</label><br>
+        <label for="address"><?= _('Address') ?>:</label><br>
         <input type="text" id="address" name="address"><br>
-        <label for="phone">Phone Number:</label><br>
+        <label for="phone"><?= _('Phone Number') ?>:</label><br>
         <input type="text" id="phone" name="phone"><br>
-        <label for="cardnum">Card Number:</label><br>
+        <label for="cardnum"><?= _('Card Number') ?>:</label><br>
         <input type="text" id="cardnum" name="cardnum"><br>
-        <label for="carddate">Card Expiration Date:</label><br>
+        <label for="carddate"><?= _('Card Expiration Date') ?>:</label><br>
         <input type="text" id="carddate" name="carddate"><br>
-        <label for="cardcvv">Card CVV:</label><br>
+        <label for="cardcvv"><?= _('Card CVV') ?>:</label><br>
         <input type="text" id="cardcvv" name="cardcvv"><br>
-        <p>Choose the speed of delivery:</p>
-        <input type="radio" id="standard" name="delivery" value="Standard">
-        <label for="standard">Standard (+0.00$)</label><br>
-        <input type="radio" id="fast" name="delivery" value="Fast">
-        <label for="css">Fast (+10.00$)</label><br>
-        <?php echo "<tr><td>Total Price: " . $total[0] . "$". "</tr></td>"; ?>
-		<br><input type="submit" name="purchase" value="Buy now!">
+        <p><?= _('Choose the speed of delivery') ?>:</p>
+        <input type="radio" id="standard" name="delivery" value='<?= _('Standard') ?>' checked>
+        <label for="standard"><?= _('Standard') ?>  (+0.00$)</label><br>
+        <input type="radio" id="fast" name="delivery" value='<?= _('Fast') ?>'>
+        <label for="css"><?= _('Fast (+10.00$)') ?></label><br>
+        <?php 
+        	if (isset($_POST["delivery"])) {
+    			$realTotal = $total[0] + 10;
+        	} else {
+        		$realTotal = $total[0];
+        	}	
+        	
+        	echo "<tr><td>" . _('Total Price: ') . $realTotal . "$". "</tr></td>";
+        	
+    	?>
+		<br><input type="submit" name="purchase" value='<?= _('Buy now!') ?>'>
 		</form>
-        
 
+		
 		<?php
 			$this->view('shared/navigation');
 		?>

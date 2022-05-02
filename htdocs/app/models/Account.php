@@ -25,5 +25,10 @@ class Account extends \app\core\Model{
 		$STMT->execute(['username'=>$this->username,'password_hash'=>$this->password_hash,'isSeller'=>$this->isSeller,'isConsumer'=>$this->isConsumer,'email'=>$this->email]);
 	}
 
+	function update2fa() {
+		$SQL = 'UPDATE account SET secret_key = :secret_key WHERE user_id = :user_id';
+		$STMT = self::$_connection->prepare($SQL);
+		$STMT->execute(['secret_key'=>$this->secret_key,'user_id'=>$this->user_id]);
+	}
 
 }

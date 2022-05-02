@@ -47,4 +47,13 @@ class Consumer extends \app\core\Controller{
 			header('location:/Consumer/index/' . $consumer->user_id_consumer);
 		}
     }
+
+	public function purchases($user_id_consumer) {
+        $checkout = new \app\models\Checkout();
+		$consumer = new \app\models\Consumer();
+		$consumer = $consumer->getUserId($user_id_consumer);
+		$checkout = $checkout->getAll($consumer->consumer_id);
+
+		$this->view('Consumer/purchases', $checkout);
+    }
 }

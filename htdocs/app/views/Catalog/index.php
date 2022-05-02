@@ -13,17 +13,17 @@
 		background-color: rgb(256,256,256);
 	}
 </style>
-	<title>Shop</title>
+	<title><?= _("Shop")?></title>
 </head>
 <body>
 	<div class='container'>
 	
 
 	<h1>Yolk</h1>
-	<h2>Shop here!</h2>
-	<p>Do you want to buy something? You can see every offer here, or if you need something specific, you can search it!</p>
+	<h2><?= _("Shop here!")?></h2>
+	<p><?= _("Do you want to buy something? You can see every offer here, or if you need something specific, you can search it!")?></p>
 	<form method='post' action=''>
-	<input type="text" placeholder="Search..." style="margin-bottom: 20px" name="bar"> <input type="submit" name='search' value='Search!' style="background-color: rgb(256,256,256);" /> 
+	<input type="text" placeholder='<?= _('Search...') ?>'style="margin-bottom: 20px" name="bar"> <input type="submit" name='search' value='<?= _('Search!') ?>' style="background-color: rgb(256,256,256);" /> 
 	</form>
 		<table>
 		<?php
@@ -36,11 +36,15 @@
 					$seller = new \app\models\Seller();
 					$seller = $seller->getName($value->seller_id);
 					$link = "/Product/page/" . $value->product_id;
-					echo "<a href='" . $link . "'>" . $value->product_name . "</a>\t | \t";
-					echo "From: ";
-					echo $seller->name . "\t | \t";	// to be changed
+					//echo '<img src="/pictures/'.$value->picture.'">';
+					echo "<img src='/pictures/" . $value->picture . "' height='200' width='200'> ";
+					echo "<a href='" . $link . "' name='product'>" . $value->product_name . "</a>\t | \t";
+					echo _('From: ');
+					$link2 = "/Catalog/sellerIndex/" . $value->seller_id;
+					echo "<a href='" . $link2 . "'>" . $seller->name . "</a>\t | \t";
+					//echo $seller->name . "\t | \t";	// to be changed
 					echo "$" . $value->product_price . "\t | \t";
-					echo $value->product_quantity . " in stock\t | \t";
+					echo $value->product_quantity . _('in stock') . "\t | \t";	
 					echo $value->product_description . "\t";
 					
 					echo "</tr>";

@@ -11,14 +11,24 @@
 
 
 		<h1>Yolk</h1>
-		<h2>Profile</h2>
-		<p>Welcome to your profile!</p>
+		<h2><?= _("Profile")?></h2>
+		<p><?= _("Welcome to your profile!")?></p>
 		<form method='post' action=''>
-		<label class='form-label'>First name:<input type='text' name='first_name' class='form-control' value='<?=$data->first_name ?>' readonly/></label><br>
-		<label class='form-label'>Last name:<input type='text' name='last_name' class='form-control' value='<?=$data->last_name ?>' readonly/></label><br>
-		<label class='form-label'>Address:<input type='text' name='address' class='form-control' value='<?=$data->address ?>' readonly/></label><br>
+		<label class='form-label'><?= _('First name')?>:<input type='text' name='first_name' class='form-control' value='<?=$data->first_name ?>' readonly/></label><br>
+		<label class='form-label'><?= _('Last name')?>:<input type='text' name='last_name' class='form-control' value='<?=$data->last_name ?>' readonly/></label><br>
+		<label class='form-label'><?= _('Address:')?>:<input type='text' name='address' class='form-control' value='<?=$data->address ?>' readonly/></label><br>
 		<?php $link = "/Consumer/update/" . $_SESSION['user_id'];
-				echo "<li><a href=" . $link . ">Update my profile</a></li>"; ?>
+				echo "<li><a href=" . $link . ">" ._('Update my profile') . "</a></li>";
+
+		$link2 = "/Consumer/purchases/" . $_SESSION['user_id'];
+				echo "<li><a href=" . $link2 . " name='purchases' >" ._('Order History') . "</a></li>"; 
+
+		$consumer = new \app\models\Consumer();
+		$consumer = $consumer->getUserId($_SESSION['user_id']);
+		$link3 = "/Request/index/" . $consumer->consumer_id;
+				echo "<li><a href=" . $link3 . ">" ._('Requests') . "</a></li>"; 
+		$link4 = "/ProductReturn/index/" . $consumer->consumer_id;
+				echo "<li><a href=" . $link4 . ">" ._('Returns') . "</a></li>"; ?>
 		
 		
 	</form>

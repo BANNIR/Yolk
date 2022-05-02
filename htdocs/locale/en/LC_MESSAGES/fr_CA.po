@@ -1,0 +1,756 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-30 14:03-0400\n"
+"PO-Revision-Date: 2022-04-30 14:35-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: app/views/Cart/index.php:16 app/views/Cart/index.php:23
+#: app/views/shared/navigation.php:31 .\app\views/Cart/index.php:16
+#: .\app\views/Cart/index.php:23 .\app\views/shared/navigation.php:31
+msgid "Cart"
+msgstr "Panier"
+
+#: app/views/Cart/index.php:24 .\app\views/Cart/index.php:24
+msgid "List of items in cart."
+msgstr "Liste des articles dans le panier."
+
+#: app/views/Cart/index.php:47 .\app\views/Cart/index.php:47
+msgid "Amount:"
+msgstr "Montant:"
+
+#: app/views/Cart/index.php:49 .\app\views/Cart/index.php:49
+msgid "Price per Item: $"
+msgstr "Prix par article: $"
+
+#: app/views/Cart/index.php:50 app/views/Confirm/index.php:51
+#: app/views/Consumer/purchases.php:53 .\app\views/Cart/index.php:50
+#: .\app\views/Confirm/index.php:51 .\app\views/Consumer/purchases.php:53
+msgid "Total Item Price: $"
+msgstr "Prix total de l’article: $"
+
+#: app/views/Cart/index.php:51 app/views/Product/index.php:48
+#: .\app\views/Cart/index.php:51 .\app\views/Product/index.php:48
+msgid "Update"
+msgstr "Mettre à jour"
+
+#: app/views/Cart/index.php:52 .\app\views/Cart/index.php:52
+msgid "Remove"
+msgstr "Supprimer"
+
+#: app/views/Cart/index.php:60 .\app\views/Cart/index.php:60
+msgid "Total Order Price: $"
+msgstr "Prix total de la commande: $"
+
+#: app/views/Catalog/index.php:16 app/views/Catalog/sellerIndex.php:16
+#: app/views/Catalog/sellerIndex.php:26 app/views/shared/navigation.php:5
+#: .\app\views/Catalog/index.php:16 .\app\views/Catalog/sellerIndex.php:16
+#: .\app\views/Catalog/sellerIndex.php:26 .\app\views/shared/navigation.php:5
+msgid "Shop"
+msgstr "Boutique"
+
+#: app/views/Catalog/index.php:23 .\app\views/Catalog/index.php:23
+msgid "Shop here!"
+msgstr "Achetez ici!"
+
+#: app/views/Catalog/index.php:24 .\app\views/Catalog/index.php:24
+msgid ""
+"Do you want to buy something? You can see every offer here, or if you need "
+"something specific, you can search it!"
+msgstr ""
+"Vous voulez acheter quelque chose? Vous pouvez voir toutes les offres ici, "
+"ou si vous avez besoin de quelque chose de spécifique, vous pouvez le "
+"rechercher!"
+
+#: app/views/Catalog/index.php:26 app/views/Catalog/sellerIndex.php:28
+#: .\app\views/Catalog/index.php:26 .\app\views/Catalog/sellerIndex.php:28
+msgid "Search..."
+msgstr "Recherche..."
+
+#: app/views/Catalog/index.php:26 app/views/Catalog/sellerIndex.php:28
+#: .\app\views/Catalog/index.php:26 .\app\views/Catalog/sellerIndex.php:28
+msgid "Search!"
+msgstr "Recherche!"
+
+#: app/views/Catalog/index.php:40 app/views/Product/index.php:44
+#: app/views/Catalog/sellerIndex.php:42 .\app\views/Catalog/index.php:40
+#: .\app\views/Catalog/sellerIndex.php:42 .\app\views/Product/index.php:44
+msgid "From: "
+msgstr "De: "
+
+#: app/views/Catalog/index.php:45 app/views/Catalog/sellerIndex.php:45
+#: .\app\views/Catalog/index.php:45 .\app\views/Catalog/sellerIndex.php:45
+msgid "in stock"
+msgstr "en inventaire"
+
+#: app/views/Checkout/index.php:16 app/views/Checkout/index.php:23
+#: .\app\views/Checkout/index.php:16 .\app\views/Checkout/index.php:23
+msgid "Checkout"
+msgstr "Caisse"
+
+#: app/views/Checkout/index.php:24 .\app\views/Checkout/index.php:24
+msgid "Confirm your purchase!"
+msgstr "Confirmer votre achat!"
+
+#: app/views/Checkout/index.php:29 .\app\views/Checkout/index.php:29
+msgid "No items in cart!"
+msgstr "Pas d’articles dans le panier!"
+
+#: app/views/Checkout/index.php:44 app/views/Confirm/index.php:49
+#: app/views/Consumer/purchases.php:51 .\app\views/Checkout/index.php:44
+#: .\app\views/Confirm/index.php:49 .\app\views/Consumer/purchases.php:51
+msgid "Amount: "
+msgstr "Montant: "
+
+#: app/views/Checkout/index.php:46 .\app\views/Checkout/index.php:46
+msgid "Price: $"
+msgstr "Prix: $"
+
+#: app/views/Checkout/index.php:62 app/views/Consumer/index.php:17
+#: app/views/Consumer/create.php:16 app/views/Consumer/update.php:16
+#: .\app\views/Checkout/index.php:62 .\app\views/Consumer/create.php:16
+#: .\app\views/Consumer/index.php:17 .\app\views/Consumer/update.php:16
+msgid "First name"
+msgstr "Prénom"
+
+#: app/views/Checkout/index.php:64 app/views/Consumer/index.php:18
+#: app/views/Consumer/create.php:17 app/views/Consumer/update.php:18
+#: .\app\views/Checkout/index.php:64 .\app\views/Consumer/create.php:17
+#: .\app\views/Consumer/index.php:18 .\app\views/Consumer/update.php:18
+msgid "Last name"
+msgstr "Nom"
+
+#: app/views/Checkout/index.php:66 app/views/Consumer/create.php:18
+#: app/views/Consumer/update.php:19 .\app\views/Checkout/index.php:66
+#: .\app\views/Consumer/create.php:18 .\app\views/Consumer/update.php:19
+msgid "Address"
+msgstr "Adresse"
+
+#: app/views/Checkout/index.php:68 .\app\views/Checkout/index.php:68
+msgid "Phone Number"
+msgstr "Numéro de téléphone"
+
+#: app/views/Checkout/index.php:70 .\app\views/Checkout/index.php:70
+msgid "Card Number"
+msgstr "Numéro de carte"
+
+#: app/views/Checkout/index.php:72 .\app\views/Checkout/index.php:72
+msgid "Card Expiration Date"
+msgstr "Date d'expiration de la carte"
+
+#: app/views/Checkout/index.php:74 .\app\views/Checkout/index.php:74
+msgid "Card CVV"
+msgstr "CVV de la carte"
+
+#: app/views/Checkout/index.php:76 .\app\views/Checkout/index.php:76
+msgid "Choose the speed of delivery"
+msgstr "Choisissez la rapidité de la livraison"
+
+#: app/views/Checkout/index.php:77 app/views/Checkout/index.php:78
+#: .\app\views/Checkout/index.php:77 .\app\views/Checkout/index.php:78
+msgid "Standard"
+msgstr "Standard"
+
+#: app/views/Checkout/index.php:79 .\app\views/Checkout/index.php:79
+msgid "Fast"
+msgstr "Rapide"
+
+#: app/views/Checkout/index.php:80 .\app\views/Checkout/index.php:80
+msgid "Fast (+10.00$)"
+msgstr "Rapide (+10.00$)"
+
+#: app/views/Checkout/index.php:88 .\app\views/Checkout/index.php:88
+msgid "Total Price: "
+msgstr "Prix total: "
+
+#: app/views/Checkout/index.php:91 .\app\views/Checkout/index.php:91
+msgid "Buy now!"
+msgstr "Achetez maintenant!"
+
+#: app/views/Confirm/index.php:16 .\app\views/Confirm/index.php:16
+msgid "Confirmed Order"
+msgstr "Commande confirmée"
+
+#: app/views/Confirm/index.php:23 .\app\views/Confirm/index.php:23
+msgid "Your order is successful!"
+msgstr "Votre commande est réussie!"
+
+#: app/views/Confirm/index.php:24 .\app\views/Confirm/index.php:24
+msgid "Your purchase:"
+msgstr "Votre achat:"
+
+#: app/views/Confirm/index.php:52 app/views/Consumer/purchases.php:54
+#: .\app\views/Confirm/index.php:52 .\app\views/Consumer/purchases.php:54
+msgid "Date Purchased: "
+msgstr "Date d'achat: "
+
+#: app/views/Consumer/index.php:14 app/views/Seller/index.php:14
+#: .\app\views/Consumer/index.php:14 .\app\views/Seller/index.php:14
+msgid "Profile"
+msgstr "Profil"
+
+#: app/views/Consumer/index.php:15 app/views/Seller/index.php:15
+#: .\app\views/Consumer/index.php:15 .\app\views/Seller/index.php:15
+msgid "Welcome to your profile!"
+msgstr "Bienvenue sur votre profil!"
+
+#: app/views/Consumer/index.php:19 .\app\views/Consumer/index.php:19
+msgid "Address:"
+msgstr "Adresse:"
+
+#: app/views/Consumer/index.php:21 app/views/Seller/index.php:23
+#: .\app\views/Consumer/index.php:21 .\app\views/Seller/index.php:23
+msgid "Update my profile"
+msgstr "Mettre à jour mon profil"
+
+#: app/views/Consumer/index.php:24 .\app\views/Consumer/index.php:24
+msgid "Order History"
+msgstr "Historique des commandes"
+
+#: app/views/Consumer/index.php:29 .\app\views/Consumer/index.php:29
+msgid "Requests"
+msgstr "Demande"
+
+#: app/views/Consumer/index.php:31 .\app\views/Consumer/index.php:31
+msgid "Returns"
+msgstr "Retours"
+
+#: app/views/Main/index.php:14 app/views/shared/navigation.php:4
+#: .\app\views/Main/index.php:14 .\app\views/shared/navigation.php:4
+msgid "Home page"
+msgstr "Page d'Accueil"
+
+#: app/views/Main/index.php:15 .\app\views/Main/index.php:15
+msgid ""
+"Welcome to Yolk! This is a website where you can sell or buy any product!"
+msgstr ""
+"Bienvenue à Yolk ! C'est un site web où vous pouvez vendre ou acheter "
+"n'importe quel produit !"
+
+#: app/views/Product/index.php:16 app/views/Product/index.php:23
+#: app/views/Product/page.php:7 .\app\views/Product/index.php:16
+#: .\app\views/Product/index.php:23 .\app\views/Product/page.php:7
+msgid "Product"
+msgstr "Produit"
+
+#: app/views/Product/index.php:24 .\app\views/Product/index.php:24
+msgid "List of all your products."
+msgstr "Liste de tous mes produits."
+
+#: app/views/Product/index.php:27 .\app\views/Product/index.php:27
+msgid "Add a product to sell!"
+msgstr "Ajoutez un produit à vendre!"
+
+#: app/views/Product/index.php:47 .\app\views/Product/index.php:47
+msgid "In stock"
+msgstr "En stock"
+
+#: app/views/Product/index.php:49 .\app\views/Product/index.php:49
+msgid "Delete"
+msgstr "Supprime"
+
+#: app/views/ProductReturn/index.php:16 .\app\views/ProductReturn/index.php:16
+msgid "Product Return"
+msgstr "Retourne de Produit"
+
+#: app/views/ProductReturn/index.php:21 .\app\views/ProductReturn/index.php:21
+msgid "View your Return Requests"
+msgstr "Voir vos demandes de retour"
+
+#: app/views/ProductReturn/index.php:26 app/views/Request/index.php:26
+#: app/views/Request/sellerIndex.php:26 .\app\views/ProductReturn/index.php:26
+#: .\app\views/Request/index.php:26 .\app\views/Request/sellerIndex.php:26
+msgid "No requests made"
+msgstr "Aucune demande n'a été faite"
+
+#: app/views/ProductReturn/index.php:39 app/views/Request/index.php:39
+#: app/views/ProductReturn/sellerindex.php:39
+#: app/views/Request/sellerIndex.php:39 .\app\views/ProductReturn/index.php:39
+#: .\app\views/ProductReturn/sellerindex.php:39
+#: .\app\views/Request/index.php:39 .\app\views/Request/sellerIndex.php:39
+msgid "Request: "
+msgstr "Demande: "
+
+#: app/views/ProductReturn/index.php:41 app/views/Request/index.php:41
+#: app/views/ProductReturn/sellerindex.php:41
+#: app/views/Request/sellerIndex.php:41 .\app\views/ProductReturn/index.php:41
+#: .\app\views/ProductReturn/sellerindex.php:41
+#: .\app\views/Request/index.php:41 .\app\views/Request/sellerIndex.php:41
+msgid "Pending"
+msgstr "En attente"
+
+#: app/views/ProductReturn/index.php:43
+#: app/views/ProductReturn/sellerindex.php:43
+#: app/views/ProductReturn/viewreturn.php:30
+#: .\app\views/ProductReturn/index.php:43
+#: .\app\views/ProductReturn/sellerindex.php:43
+#: .\app\views/ProductReturn/viewreturn.php:30
+msgid "Accepted"
+msgstr "Accepté"
+
+#: app/views/ProductReturn/index.php:45
+#: app/views/ProductReturn/sellerindex.php:45
+#: .\app\views/ProductReturn/index.php:45
+#: .\app\views/ProductReturn/sellerindex.php:45
+msgid "Refused"
+msgstr "Refusé"
+
+#: app/views/Request/index.php:16 app/views/ProductReturn/response.php:12
+#: app/views/Request/response.php:12 app/views/Request/sellerIndex.php:16
+#: app/views/Request/viewrequest.php:12
+#: .\app\views/ProductReturn/response.php:12 .\app\views/Request/index.php:16
+#: .\app\views/Request/response.php:12 .\app\views/Request/sellerIndex.php:16
+#: .\app\views/Request/viewrequest.php:12
+msgid "Request"
+msgstr "Demande"
+
+#: app/views/Request/index.php:21 app/views/ProductReturn/sellerindex.php:21
+#: app/views/Request/sellerIndex.php:21
+#: .\app\views/ProductReturn/sellerindex.php:21
+#: .\app\views/Request/index.php:21 .\app\views/Request/sellerIndex.php:21
+msgid "View your requests"
+msgstr "Voir vos demandes"
+
+#: app/views/Request/index.php:43 app/views/Request/sellerIndex.php:43
+#: .\app\views/Request/index.php:43 .\app\views/Request/sellerIndex.php:43
+msgid "Done"
+msgstr "Terminé"
+
+#: app/views/Seller/index.php:7 .\app\views/Seller/index.php:7
+msgid "Seller Profile"
+msgstr "Profil du vendeur"
+
+#: app/views/Seller/index.php:17 app/views/Seller/create.php:16
+#: app/views/Seller/update.php:16 .\app\views/Seller/create.php:16
+#: .\app\views/Seller/index.php:17 .\app\views/Seller/update.php:16
+msgid "Name"
+msgstr "Nom"
+
+#: app/views/Seller/index.php:26 .\app\views/Seller/index.php:26
+msgid "My Products"
+msgstr "Mes produits"
+
+#: app/views/Seller/index.php:29 .\app\views/Seller/index.php:29
+msgid "Service Requests"
+msgstr "Demandes de Service"
+
+#: app/views/Seller/index.php:32 .\app\views/Seller/index.php:32
+msgid "Return Requests"
+msgstr "Demandes de retour"
+
+#: app/views/Account/login.php:7 .\app\views/Account/login.php:7
+msgid "User login"
+msgstr "Connexion de l'utilisateur"
+
+#: app/views/Account/login.php:15 app/views/Account/register.php:17
+#: .\app\views/Account/login.php:15 .\app\views/Account/register.php:17
+msgid "Username"
+msgstr "Identifiant"
+
+#: app/views/Account/login.php:16 app/views/Account/register.php:18
+#: .\app\views/Account/login.php:16 .\app\views/Account/register.php:18
+msgid "Password"
+msgstr "Mot de Passe"
+
+#: app/views/Account/login.php:18 .\app\views/Account/login.php:18
+msgid "Login!"
+msgstr "Connexion!"
+
+#: app/views/Account/login.php:20 .\app\views/Account/login.php:20
+msgid "No account?"
+msgstr "Pas de compte?"
+
+#: app/views/Account/login.php:20 .\app\views/Account/login.php:20
+msgid "Register here."
+msgstr "Inscrivez-vous ici."
+
+#: app/views/Account/register.php:7 .\app\views/Account/register.php:7
+msgid "User registration"
+msgstr "Connexion de l'utilisateur"
+
+#: app/views/Account/register.php:14 .\app\views/Account/register.php:14
+msgid "Register to your user account"
+msgstr "Enregistrez-vous sur votre compte utilisateur"
+
+#: app/views/Account/register.php:16 .\app\views/Account/register.php:16
+msgid "Email"
+msgstr "Courriel"
+
+#: app/views/Account/register.php:19 .\app\views/Account/register.php:19
+msgid "Password confirmation"
+msgstr "Confirmation du mot de passe"
+
+#: app/views/Account/register.php:21 .\app\views/Account/register.php:21
+msgid "Seller"
+msgstr "Vendeur"
+
+#: app/views/Account/register.php:23 .\app\views/Account/register.php:23
+msgid "Consumer"
+msgstr "Consomateur"
+
+#: app/views/Account/register.php:24 .\app\views/Account/register.php:24
+msgid "Register!"
+msgstr "Inscrivez!"
+
+#: app/views/Account/register.php:26 .\app\views/Account/register.php:26
+msgid "Already have an account?"
+msgstr "Vous avez déjà un compte?"
+
+#: app/views/Account/register.php:26 .\app\views/Account/register.php:26
+msgid "Login here."
+msgstr "Connectez-vous ici."
+
+#: app/views/Account/twofasetup.php:7 .\app\views/Account/twofasetup.php:7
+msgid ""
+"Please scan the QR-code on the screen with your favorite\n"
+"        Authenticator software, such as Google Authenticator. The\n"
+"        authenticator software will generate codes that are valid for 30\n"
+"        seconds only. Enter such a code while and submit it while it is\n"
+"        still valid to confirm that the 2-factor authentication can be\n"
+"        applied to your account. You can also choose to not use a two-factor "
+"authentication setup, by clicking on the Cancel button."
+msgstr ""
+"Veuillez scanner le code QR à l'écran avec votre logiciel d'authentification "
+"préféré, tel que Google Authenticator.\n"
+"        logiciel d'authentification préféré, tel que Google Authenticator. "
+"Le logiciel d'authentification\n"
+"        logiciel d'authentification génère des codes qui ne sont valables "
+"que pendant 30 secondes.\n"
+"        secondes seulement. Saisissez un tel code et soumettez-le pendant "
+"qu'il est encore\n"
+"        encore valide pour confirmer que l'authentification à deux facteurs "
+"peut être\n"
+"        appliquée à votre compte. Vous pouvez également choisir de ne pas "
+"utiliser de configuration d'authentification à deux facteurs, en cliquant "
+"sur le bouton Annuler."
+
+#: app/views/Account/twofasetup.php:16 .\app\views/Account/twofasetup.php:16
+msgid "Verify Code, I want to use 2FA"
+msgstr "Code de vérification, je veux utiliser 2FA"
+
+#: app/views/Account/twofasetup.php:17 .\app\views/Account/twofasetup.php:17
+msgid "Cancel, I do not want to use 2FA"
+msgstr "Annuler, je ne veux pas utiliser 2FA"
+
+#: app/views/Account/validate2fa.php:10 .\app\views/Account/validate2fa.php:10
+msgid "Please enter your secret key to log into this application:"
+msgstr ""
+"Veuillez entrer votre clé secrète pour vous connecter à cette application:"
+
+#: app/views/Account/validate2fa.php:12 .\app\views/Account/validate2fa.php:12
+msgid "Secret key"
+msgstr "Clé secrète"
+
+#: app/views/Account/validate2fa.php:14 .\app\views/Account/validate2fa.php:14
+msgid "Verify key"
+msgstr "Vérifier la clé"
+
+#: app/views/Cart/update.php:7 .\app\views/Cart/update.php:7
+msgid "Update comment"
+msgstr "Commentaire de mise à jour"
+
+#: app/views/Cart/update.php:15 .\app\views/Cart/update.php:15
+msgid "Update your cart"
+msgstr "Mettre à jour votre panier"
+
+#: app/views/Cart/update.php:16 .\app\views/Cart/update.php:16
+msgid "Please enter the details required to update your comment."
+msgstr ""
+"Veuillez entrer les détails requis pour mettre à jour votre commentaire."
+
+#: app/views/Cart/update.php:18 app/views/Product/create.php:25
+#: app/views/Product/update.php:26 .\app\views/Cart/update.php:18
+#: .\app\views/Product/create.php:25 .\app\views/Product/update.php:26
+msgid "Quantity"
+msgstr "Qantité"
+
+#: app/views/Cart/update.php:19 app/views/Consumer/update.php:20
+#: app/views/Product/update.php:27 app/views/Seller/update.php:17
+#: .\app\views/Cart/update.php:19 .\app\views/Consumer/update.php:20
+#: .\app\views/Product/update.php:27 .\app\views/Seller/update.php:17
+msgid "Update!"
+msgstr "Mettre à jour!"
+
+#: app/views/Consumer/create.php:13 app/views/Seller/create.php:13
+#: .\app\views/Consumer/create.php:13 .\app\views/Seller/create.php:13
+msgid "Create a profile"
+msgstr "Créer un profil"
+
+#: app/views/Consumer/create.php:14 app/views/Seller/create.php:14
+#: .\app\views/Consumer/create.php:14 .\app\views/Seller/create.php:14
+msgid "Please fill the required fields to create your profile."
+msgstr "Veuillez remplir les champs obligatoires pour créer votre profil."
+
+#: app/views/Consumer/create.php:19 app/views/Product/create.php:26
+#: app/views/Seller/create.php:17 .\app\views/Consumer/create.php:19
+#: .\app\views/Product/create.php:26 .\app\views/Seller/create.php:17
+msgid "Create!"
+msgstr "Créez!"
+
+#: app/views/Consumer/purchases.php:7 .\app\views/Consumer/purchases.php:7
+msgid "Consumer Profile"
+msgstr "Profil de Consomateur"
+
+#: app/views/Consumer/purchases.php:25 .\app\views/Consumer/purchases.php:25
+msgid "My Order History"
+msgstr "Historique de mes commandes"
+
+#: app/views/Consumer/purchases.php:26 .\app\views/Consumer/purchases.php:26
+msgid "All previous orders."
+msgstr "Toutes les commandes précédentes."
+
+#: app/views/Consumer/purchases.php:31 .\app\views/Consumer/purchases.php:31
+msgid "No previously ordered items!"
+msgstr "Aucun article déjà commandé !"
+
+#: app/views/Consumer/purchases.php:55 .\app\views/Consumer/purchases.php:55
+msgid "Service"
+msgstr "Service"
+
+#: app/views/Consumer/purchases.php:56 .\app\views/Consumer/purchases.php:56
+msgid "Return"
+msgstr "Retourne"
+
+#: app/views/Consumer/update.php:7 app/views/Seller/update.php:7
+#: .\app\views/Consumer/update.php:7 .\app\views/Seller/update.php:7
+msgid "Profile Update"
+msgstr "Mettre à jour mon profil"
+
+#: app/views/Consumer/update.php:13 app/views/Seller/update.php:13
+#: .\app\views/Consumer/update.php:13 .\app\views/Seller/update.php:13
+msgid "Update a profile"
+msgstr "Mettre à jour mon profil"
+
+#: app/views/Consumer/update.php:14 app/views/Seller/update.php:14
+#: .\app\views/Consumer/update.php:14 .\app\views/Seller/update.php:14
+msgid "Please fill the required fields to update your profile."
+msgstr ""
+"Veuillez remplir les champs obligatoires pour mettre à jour votre profil."
+
+#: app/views/Product/create.php:7 app/views/Product/create.php:15
+#: .\app\views/Product/create.php:7 .\app\views/Product/create.php:15
+msgid "Create a product"
+msgstr "Créer un produit"
+
+#: app/views/Product/create.php:16 .\app\views/Product/create.php:16
+msgid "Please enter the details required to sell your product."
+msgstr "Veuillez entrer les détails nécessaires à la vente de votre produit."
+
+#: app/views/Product/create.php:18 app/views/Product/update.php:18
+#: .\app\views/Product/create.php:18 .\app\views/Product/update.php:18
+msgid "Product Name"
+msgstr "Nom du produit"
+
+#: app/views/Product/create.php:19 app/views/Product/update.php:22
+#: .\app\views/Product/create.php:19 .\app\views/Product/update.php:22
+msgid "Product Image"
+msgstr "Image du produit"
+
+#: app/views/Product/create.php:20 app/views/Product/update.php:20
+#: .\app\views/Product/create.php:20 .\app\views/Product/update.php:20
+msgid "Description"
+msgstr "Déscription"
+
+#: app/views/Product/create.php:21 .\app\views/Product/create.php:21
+msgid "Here, write anything you would like!"
+msgstr "Ici, écrivez ce que vous voulez!"
+
+#: app/views/Product/create.php:22 app/views/Product/update.php:23
+#: .\app\views/Product/create.php:22 .\app\views/Product/update.php:23
+msgid "Advertisement"
+msgstr "Publicité"
+
+#: app/views/Product/create.php:23 .\app\views/Product/create.php:23
+msgid "Input any product advertisement here!"
+msgstr "Saisissez ici toute publicité pour un produit!"
+
+#: app/views/Product/create.php:24 app/views/Product/update.php:25
+#: .\app\views/Product/create.php:24 .\app\views/Product/update.php:25
+msgid "Price"
+msgstr "Prix"
+
+#: app/views/Product/page.php:22 .\app\views/Product/page.php:22
+msgid "Name:"
+msgstr "Nom:"
+
+#: app/views/Product/page.php:24 .\app\views/Product/page.php:24
+msgid "By:"
+msgstr "De:"
+
+#: app/views/Product/page.php:26 .\app\views/Product/page.php:26
+msgid "Price:"
+msgstr "Prix:"
+
+#: app/views/Product/page.php:27 .\app\views/Product/page.php:27
+msgid "Quantity in stock:"
+msgstr "Quantité en stock:"
+
+#: app/views/Product/page.php:30 .\app\views/Product/page.php:30
+msgid "Description:"
+msgstr "Description:"
+
+#: app/views/Product/page.php:32 .\app\views/Product/page.php:32
+msgid "Add to Cart"
+msgstr "Ajouter au panier"
+
+#: app/views/Product/update.php:15 .\app\views/Product/update.php:15
+msgid "Update your product"
+msgstr "Mettez votre produit à jour"
+
+#: app/views/Product/update.php:16 .\app\views/Product/update.php:16
+msgid "Please fill the required fields to update your comment."
+msgstr ""
+"Veuillez remplir les champs obligatoires pour mettre à jour votre "
+"commentaire."
+
+#: app/views/ProductReturn/create.php:12
+#: app/views/ProductReturn/viewreturn.php:12
+#: .\app\views/ProductReturn/create.php:12
+#: .\app\views/ProductReturn/viewreturn.php:12
+msgid "Return Request"
+msgstr "Demandes de retour"
+
+#: app/views/ProductReturn/create.php:17
+#: .\app\views/ProductReturn/create.php:17
+msgid "Product:"
+msgstr "Produits:"
+
+#: app/views/ProductReturn/create.php:21
+#: app/views/ProductReturn/viewreturn.php:21
+#: .\app\views/ProductReturn/create.php:21
+#: .\app\views/ProductReturn/viewreturn.php:21
+msgid "Reason of Request:"
+msgstr "Motif de la demande:"
+
+#: app/views/ProductReturn/create.php:22
+#: .\app\views/ProductReturn/create.php:22
+msgid "Please describe any problem or question that you may be having."
+msgstr "Veuillez décrire tout problème ou question que vous pourriez avoir."
+
+#: app/views/ProductReturn/create.php:23
+#: .\app\views/ProductReturn/create.php:23
+msgid "Make a return request"
+msgstr "Faire une demande de retour"
+
+#: app/views/ProductReturn/response.php:17
+#: app/views/ProductReturn/viewreturn.php:17 app/views/Request/create.php:17
+#: app/views/Request/response.php:17 app/views/Request/viewrequest.php:17
+#: .\app\views/ProductReturn/response.php:17
+#: .\app\views/ProductReturn/viewreturn.php:17
+#: .\app\views/Request/create.php:17 .\app\views/Request/response.php:17
+#: .\app\views/Request/viewrequest.php:17
+msgid "Product: "
+msgstr "Produits: "
+
+#: app/views/ProductReturn/response.php:21 app/views/Request/create.php:21
+#: app/views/Request/response.php:21 app/views/Request/viewrequest.php:21
+#: .\app\views/ProductReturn/response.php:21 .\app\views/Request/create.php:21
+#: .\app\views/Request/response.php:21 .\app\views/Request/viewrequest.php:21
+msgid "Description of problem:"
+msgstr "Description du problème:"
+
+#: app/views/ProductReturn/response.php:26
+#: .\app\views/ProductReturn/response.php:26
+msgid "Accept"
+msgstr "Accepte"
+
+#: app/views/ProductReturn/response.php:27
+#: .\app\views/ProductReturn/response.php:27
+msgid "Reject"
+msgstr "Refuse"
+
+#: app/views/ProductReturn/response.php:31
+#: .\app\views/ProductReturn/response.php:31
+msgid "Return Request Accepted"
+msgstr "Demande de retour acceptée"
+
+#: app/views/ProductReturn/response.php:34
+#: .\app\views/ProductReturn/response.php:34
+msgid "Return Request Rejected"
+msgstr "Demande de retour refusée"
+
+#: app/views/ProductReturn/sellerindex.php:16
+#: .\app\views/ProductReturn/sellerindex.php:16
+msgid "Product Returns"
+msgstr "Retours de produits"
+
+#: app/views/ProductReturn/viewreturn.php:26
+#: .\app\views/ProductReturn/viewreturn.php:26
+msgid "No response"
+msgstr "Pas de réponse"
+
+#: app/views/ProductReturn/viewreturn.php:32
+#: .\app\views/ProductReturn/viewreturn.php:32
+msgid "Rejected"
+msgstr "Refusé"
+
+#: app/views/Request/create.php:12 .\app\views/Request/create.php:12
+msgid "Customer Service"
+msgstr "Service à la clientèle"
+
+#: app/views/Request/create.php:22 .\app\views/Request/create.php:22
+msgid "Please describe the problem you are having."
+msgstr "Veuillez décrire le problème que vous rencontrez."
+
+#: app/views/Request/create.php:23 .\app\views/Request/create.php:23
+msgid "Make a request"
+msgstr "Faire une demande"
+
+#: app/views/Request/response.php:27 .\app\views/Request/response.php:27
+msgid "Response"
+msgstr "Réponse"
+
+#: app/views/Request/response.php:30 .\app\views/Request/response.php:30
+msgid "Submit"
+msgstr "Soumettre"
+
+#: app/views/Request/response.php:34 .\app\views/Request/response.php:34
+msgid "Response:"
+msgstr "Réponse:"
+
+#: app/views/Request/viewrequest.php:26 .\app\views/Request/viewrequest.php:26
+msgid "No response yet"
+msgstr "Pas encore de réponse"
+
+#: app/views/Request/viewrequest.php:29 .\app\views/Request/viewrequest.php:29
+msgid "Response by Seller:"
+msgstr "Réponse du vendeur :"
+
+#: app/views/Seller/create.php:7 .\app\views/Seller/create.php:7
+msgid "Create profile"
+msgstr "Créer un profil"
+
+#: app/views/shared/navigation.php:15 .\app\views/shared/navigation.php:15
+msgid "Log in/Register"
+msgstr "Connexion/Inscription"
+
+#: app/views/shared/navigation.php:25 .\app\views/shared/navigation.php:25
+msgid "My Profile"
+msgstr "Mon profil"
+
+#: app/views/shared/navigation.php:29 .\app\views/shared/navigation.php:29
+msgid "My profile"
+msgstr "Mon profil"
+
+#: app/views/shared/navigation.php:33 .\app\views/shared/navigation.php:33
+msgid "Log out"
+msgstr "Déconnexion"
+
+#~ msgid "Checkout!"
+#~ msgstr "Caisse!"
+
+#~ msgid "From:"
+#~ msgstr "De:"

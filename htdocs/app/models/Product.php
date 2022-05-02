@@ -30,25 +30,25 @@ class Product extends \app\core\Model{
 			return $STMT->fetchAll();
 	}
 
-	function getTitle($publication_title){
-		$SQL = 'SELECT * FROM publication WHERE publication_title = :publication_title';
-		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['publication_title'=>$publication_title]);
-		//TODO:add something here to make the return types cooler
-		$STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Product");
-		return $STMT->fetchAll();
-	}
+	function getTitle($product_name){
+        $SQL = 'SELECT * FROM product WHERE product_name LIKE :product_name';
+        $STMT = self::$_connection->prepare($SQL);
+        $STMT->execute(['product_name'=>$product_name]);
+        //TODO:add something here to make the return types cooler
+        $STMT->setFetchMode(\PDO::FETCH_CLASS, "app\models\Product");
+        return $STMT->fetchAll();
+    }
 
 	function insert(){
-		$SQL = 'INSERT INTO product(product_name,seller_id,product_description,product_price,product_quantity) VALUES(:product_name,:seller_id,:product_description,:product_price,:product_quantity)';
+		$SQL = 'INSERT INTO product(product_name,seller_id,product_description,picture,product_price,product_quantity,advertisement) VALUES(:product_name,:seller_id,:product_description,:picture,:product_price,:product_quantity,:advertisement)';
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['product_name'=>$this->product_name,'seller_id'=>$this->seller_id,'product_description'=>$this->product_description,'product_price'=>$this->product_price,'product_quantity'=>$this->product_quantity]);
+		$STMT->execute(['product_name'=>$this->product_name,'seller_id'=>$this->seller_id,'product_description'=>$this->product_description,'picture'=>$this->picture,'product_price'=>$this->product_price,'product_quantity'=>$this->product_quantity,'advertisement'=>$this->advertisement]);
 	}
 
 	function update(){
-		$SQL = 'UPDATE product SET product_name = :product_name, product_description = :product_description, product_price = :product_price, product_quantity = :product_quantity WHERE seller_id = :seller_id';
+		$SQL = 'UPDATE product SET product_name = :product_name, product_description = :product_description, picture = :picture, product_price = :product_price, product_quantity = :product_quantity, advertisement = :advertisement WHERE product_id = :product_id';
 		$STMT = self::$_connection->prepare($SQL);
-		$STMT->execute(['product_name'=>$this->product_name,'product_description'=>$this->product_description,'product_price'=>$this->product_price,'product_quantity'=>$this->product_quantity,'seller_id'=>$this->seller_id]);
+		$STMT->execute(['product_name'=>$this->product_name,'product_description'=>$this->product_description,'picture'=>$this->picture,'product_price'=>$this->product_price,'product_quantity'=>$this->product_quantity,'product_id'=>$this->product_id,'advertisement'=>$this->advertisement]);
 	}
 
 	function delete($product_id){

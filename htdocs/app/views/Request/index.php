@@ -13,27 +13,41 @@
 		background-color: rgb(256,256,256);
 	}
 </style>
-	<title>Publications</title>
+	<title><?= _("Request")?></title>
 </head>
 <body>
 	<div class='container'>
-		<table>
+	<h1>Yolk</h1>
+	<h2><?= _("View your requests")?></h2>
+
+	<table>
 		<?php
+		if (!$data) {
+			echo "<p>" ._('No requests made') . "</p>";
+		} else {
 			foreach ($data as $key => $value) {
-				
+
 					echo "<tr>";
 					echo "<td>";
-	  				$profile = new \app\models\Profile();
-					$profile = $profile->get($value->profile_id);
-					$link = "/Publication/page/" . $value->publication_id;
-					echo $profile->first_name . "\t";
-					echo $profile->middle_name . "\t";
-					echo $profile->last_name . "\t | \t";
-					echo $value->timestamp . "<br>";
-					echo $value->comment_text;
+
+	  				$product = new \app\models\Product();
+					$product = $product->get($value->request_product_id);
+					// var_dump($value);
+
+					$link = "/Request/viewRequest/" . $value->request_id;
+					echo "<a href='" . $link . "'>" . $product->product_name . "</a>\t | \t";
+					echo _('Request: ');
+					if ($value->isDone == 0) {
+						echo _('Pending') . "\t | \t";
+					} else {
+						echo _('Done') . "\t | \t";
+					}
 					echo "</tr>";
 					echo "</td>";
 			}
+			
+		}
+			
 		?>
 		</table>
 

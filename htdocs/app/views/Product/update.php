@@ -11,16 +11,20 @@
 	
 
 
-	<h1>Writers</h1>
-	<h2>Update your comment</h2>
-	<p>Please enter the details required to update your comment.</p>
-	<form method='post' action=''>
-		<label class='form-label'>Product Name:<input type='text' name='name' class='form-control' value="<?=$data->product_name ?>" /></label><br>
-		<label for="product_description">Description:</label>
+	<h1>Yolk</h1>
+	<h2><?= _("Update your product")?></h2>
+	<p><?= _("Please fill the required fields to update your comment.")?></p>
+	<form method='post' action='' enctype="multipart/form-data">
+		<label class='form-label'><?=_('Product Name')?>:<input type='text' name='name' class='form-control' value="<?=$data->product_name ?>" /></label><br>
+		<img src='/pictures/<?= $data->picture ?>' width="500" length="500"/> <br>
+		<label for="product_description"><?=_('Description')?>:</label>
 		<textarea id="product_description" name="product_description" rows="5" cols="150"><?=$data->product_description ?></textarea><br>
-		<label class='form-label'>Price:<input type='text' name='product_price' class='form-control'  value="<?=$data->product_price ?>"/></label><br>
-		<label class='form-label'>Quantity:<input type='number' name='product_quantity' class='form-control' value="<?=$data->product_quantity ?>"/></label><br>
-		<input type="submit" name='update' value='Update!' class='form-control' />
+		<label class='form-label'><?=_('Product Image')?>:<input type='file' name='image' class='form-control'/></label><br>
+		<label for="advertisement"><?=_('Advertisement')?>:</label><br>
+		<textarea id="advertisement" name="advertisement" rows="5" cols="150"><?=$data->advertisement ?></textarea><br>
+		<label class='form-label'><?=_('Price')?>:<input type='text' name='product_price' class='form-control'  value="<?=$data->product_price ?>"/></label><br>
+		<label class='form-label'><?=_('Quantity')?>:<input type='number' name='product_quantity' class='form-control' value="<?=$data->product_quantity ?>"/></label><br>
+		<input type="submit" name='update' value='<?= _('Update!')?>' class='form-control' />
 	</form>
 		<?php
 			$this->view('shared/navigation');

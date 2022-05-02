@@ -13,18 +13,18 @@
 		background-color: rgb(256,256,256);
 	}
 </style>
-	<title>Publications</title>
+	<title><?= _("Product")?></title>
 </head>
 <body>
 	<div class='container'>
 	
 
 	<h1>Writers</h1>
-	<h2>Publications</h2>
-	<p>List of all the publications.</p>
+	<h2><?= _("Product")?></h2>
+	<p><?= _("List of all your products.")?></p>
 	<form method='post' action=''>
 	<!-- <input type="text" placeholder="Search..." style="margin-bottom: 20px" name="bar"> <input type="submit" name='search' value='Go!' style="background-color: rgb(256,256,256);" /> -->
-	<input type="submit" name='add' value='Add a product to sell!' style="background-color: rgb(256,256,256);" />
+	<input type="submit" name='add' value='<?= _('Add a product to sell!')?>' style="background-color: rgb(256,256,256);" />
 	</form>
 		<table>
 		<?php
@@ -41,12 +41,12 @@
 					$link2 = "/Product/update/" . $value->product_id;
 					$link3 = "/Product/delete/" . $value->product_id;
 					echo "<a href='" . $link . "'>" . $value->product_name . "</a>\t | \t";
-					echo "From: ";
+					echo _('From: ');
 					echo $seller->name . "\t | \t";	// to be changed
 					echo "$" . $value->product_price . "\t | \t";
-					echo $value->product_quantity . " in stock\t | \t";
-					echo "<a href='" . $link2 . "'>" . "Update" . "</a>\t | ";
-					echo "<a href='" . $link3 . "'>" . "Delete" . "</a>\t | <br>";
+					echo $value->product_quantity . _('In stock') . "\t | \t";
+					echo "<a href='" . $link2 . "'>" . _('Update') . "</a>\t | ";
+					echo "<a href='" . $link3 . "'>" . _('Delete') . "</a>\t | <br>";
 					echo $value->product_description . "\t";
 
 					// echo $profile->middle_name . "\t";

@@ -4,6 +4,7 @@
 	class App{
 		private $controller = 'Main';
 		private $method = 'index';
+		private $lang = '?lang=en_CA';
 
 		public function __construct(){
 			//This is the location of the routing algorithm
@@ -28,6 +29,19 @@
 				}
 				unset($url[1]);
 			}
+
+			/**
+			//testing code
+			if ($_SESSION['lang'] == "?lang=fr_CA") {
+				$this->lang = "?lang=fr_CA";
+				$this->lang = $url[3];
+				// $_SESSION['lang'] = "fr_CA";
+			} 
+			elseif ($_SESSION['lang'] == "?lang=en_US") {
+				$this->lang = $url[3];
+			}
+			*/
+			
 
 			//access filtering
 			//initialize on the controller object to read its information
