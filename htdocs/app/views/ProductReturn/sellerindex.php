@@ -32,18 +32,23 @@
 
 	  				$product = new \app\models\Product();
 					$product = $product->get($value->return_product_id);
+					$consumer = new \app\models\Consumer();
+					$consumer = $consumer->get($value->return_consumer_id);
 					// var_dump($value);
 
 					$link = "/ProductReturn/sellerResponse/" . $value->return_id;
 					echo "<a href='" . $link . "'>" . $product->product_name . "</a>\t | \t";
+					echo $consumer->first_name . " " . $consumer->last_name . "\t | \t";
 					echo _('Request: ');
-					if ($value->isAccepted == null) {
-						echo _('Pending') . "\t | \t";
-					} elseif ($value->isAccepted == 1) {
+					if ($value->isAccepted == 1) {
 						echo _('Accepted') . "\t | \t";
-					} else {
+					} 
+					if($value->isAccepted == 0) {
                         echo _('Refused') . "\t | \t";
-                    }
+                    } 
+					if($value->isAccepted == 2) {
+						echo _('Pending') . "\t | \t";
+					}
 					echo "</tr>";
 					echo "</td>";
 			}

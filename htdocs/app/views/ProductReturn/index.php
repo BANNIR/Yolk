@@ -32,16 +32,19 @@
 
 	  				$product = new \app\models\Product();
 					$product = $product->get($value->return_product_id);
+					$seller = new \app\models\Seller();
+					$seller = $seller->get($product->seller_id);
 					// var_dump($value);
 
 					$link = "/ProductReturn/viewReturn/" . $value->return_id;
 					echo "<a href='" . $link . "'>" . $product->product_name . "</a>\t | \t";
+					echo $seller->name . "\t | \t";
 					echo _('Request: ');
-					if ($value->isAccepted == null) {
+					if ($value->isAccepted == 2) {
 						echo _('Pending') . "\t | \t";
 					} elseif($value->isAccepted == 1) {
 						echo _('Accepted') . "\t | \t";
-					} else {
+					} elseif($value->isAccepted == 0) {
                         echo _('Refused') . "\t | \t";
                     }
 					echo "</tr>";

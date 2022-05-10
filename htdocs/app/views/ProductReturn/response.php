@@ -22,7 +22,7 @@
 		<textarea id="return_description" name="return_description" rows="5" cols="150" readonly><?=$data->return_description ?></textarea>
 	    
         <?php 
-            if ($data->isAccepted == null) {
+            if ($data->isAccepted == 2) {
                 echo "<input type='submit' id='return_response_accept' name='return_response_accept' value="._('Accept').">";
                 echo "<input type='submit' id='return_response_reject' name='return_response_reject' value="._('Reject').">";
                 echo "</form>";

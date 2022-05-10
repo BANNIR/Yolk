@@ -32,10 +32,13 @@
 
 	  				$product = new \app\models\Product();
 					$product = $product->get($value->request_product_id);
+					$consumer = new \app\models\Consumer();
+					$consumer = $consumer->get($value->request_consumer_id);
 					// var_dump($value);
 
 					$link = "/Request/sellerResponse/" . $value->request_id;
 					echo "<a href='" . $link . "'>" . $product->product_name . "</a>\t | \t";
+					echo $consumer->first_name . " " . $consumer->last_name . "\t | \t";
 					echo _('Request: ');
 					if ($value->isDone == 0) {
 						echo _('Pending') . "\t | \t";

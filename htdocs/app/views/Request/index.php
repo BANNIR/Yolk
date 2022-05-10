@@ -32,10 +32,13 @@
 
 	  				$product = new \app\models\Product();
 					$product = $product->get($value->request_product_id);
+					$seller = new \app\models\Seller();
+					$seller = $seller->get($product->seller_id);
 					// var_dump($value);
 
 					$link = "/Request/viewRequest/" . $value->request_id;
 					echo "<a href='" . $link . "'>" . $product->product_name . "</a>\t | \t";
+					echo $seller->name . "\t | \t";
 					echo _('Request: ');
 					if ($value->isDone == 0) {
 						echo _('Pending') . "\t | \t";

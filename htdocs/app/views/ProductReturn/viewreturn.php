@@ -22,13 +22,13 @@
 		<textarea id="return_description" name="return_description" rows="5" cols="150" readonly><?=$data->return_description ?></textarea>
 	</form>
     <?php 
-			if ($data->isAccepted == null) {
+			if ($data->isAccepted == 2) {
             	echo _('No response');
 			} else {
                 echo"<p>Response by Seller: <p>";
                 if ($data->isAccepted == 1) {
                     echo _('Accepted');
-                } else {
+                } elseif($data->isAccepted == 0) {
                     echo _('Rejected');
                 }
             }
