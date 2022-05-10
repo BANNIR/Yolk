@@ -5,7 +5,7 @@ Feature: sellerViewProductRequest.feature
 
   Scenario: try sellerViewProductRequest.feature
   Given I am logged in as a seller
-  And am on page "http://localhost/Seller/index/12"
+  And I am on the page "http://localhost/Seller/index/12"
   When I click on the hyperlink "requests"
   Then I should be on page "http://localhost/Request/sellerIndex/5"
   And I should see "request: pending"

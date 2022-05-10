@@ -330,11 +330,4 @@ class AcceptanceTester extends \Codeception\Actor
 
     //seller view requests
 
-    /**
-     * @Given am on page :arg1
-     */
-    public function amOnPage($arg1)
-    {
-        $this->amOnPage($arg1);
-    }
 }
